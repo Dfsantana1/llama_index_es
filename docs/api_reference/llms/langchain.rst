@@ -1,4 +1,4 @@
 LangChainLLM
 ============
 
-.. autopydantic_model:: llama_index.llms.langchain.LangChainLLM
+.. autopydantic_model:: llama_index_es.llms.langchain.LangChainLLM

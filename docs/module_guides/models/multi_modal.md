@@ -11,11 +11,11 @@ We've included a base `MultiModalLLM` abstraction to allow for text+image models
 The following code snippet shows how you can get started using LMMs e.g. with GPT-4V.
 
 ```python
-from llama_index.multi_modal_llms import OpenAIMultiModal
-from llama_index.multi_modal_llms.generic_utils import (
+from llama_index_es.multi_modal_llms import OpenAIMultiModal
+from llama_index_es.multi_modal_llms.generic_utils import (
     load_image_urls,
 )
-from llama_index import SimpleDirectoryReader
+from llama_index_es import SimpleDirectoryReader
 
 # load image documents from urls
 image_documents = load_image_urls(image_urls)

@@ -1,7 +1,7 @@
 from typing import List
 
 import pytest
-from llama_index.llms.base import ChatMessage, MessageRole
+from llama_index_es.llms.base import ChatMessage, MessageRole
 
 try:
     import cohere
@@ -10,7 +10,7 @@ except ImportError:
 
 try:
     import langchain
-    from llama_index.bridge.langchain import (
+    from llama_index_es.bridge.langchain import (
         AIMessage,
         BaseMessage,
         ChatOpenAI,
@@ -21,8 +21,8 @@ try:
         OpenAI,
         SystemMessage,
     )
-    from llama_index.llms.langchain import LangChainLLM
-    from llama_index.llms.langchain_utils import from_lc_messages, to_lc_messages
+    from llama_index_es.llms.langchain import LangChainLLM
+    from llama_index_es.llms.langchain_utils import from_lc_messages, to_lc_messages
 except ImportError:
     langchain = None  # type: ignore
 

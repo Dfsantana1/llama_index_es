@@ -75,7 +75,7 @@ We build each index and save it to disk.
 
 ```python
 # initialize simple vector indices
-from llama_index import VectorStoreIndex, ServiceContext, StorageContext
+from llama_index_es import VectorStoreIndex, ServiceContext, StorageContext
 
 index_set = {}
 service_context = ServiceContext.from_defaults(chunk_size=512)
@@ -94,7 +94,7 @@ To load an index from disk, do the following
 
 ```python
 # Load indices from disk
-from llama_index import load_index_from_storage
+from llama_index_es import load_index_from_storage
 
 index_set = {}
 for year in years:
@@ -117,7 +117,7 @@ LlamaIndex provides some wrappers around indices (and query engines) so that the
 Each tool has a name and a description; these are what the LLM agent sees to decide which tool to choose.
 
 ```python
-from llama_index.tools import QueryEngineTool, ToolMetadata
+from llama_index_es.tools import QueryEngineTool, ToolMetadata
 
 individual_query_engine_tools = [
     QueryEngineTool(
@@ -134,7 +134,7 @@ individual_query_engine_tools = [
 Now we can create the Sub Question Query Engine, which will allow us to synthesize answers across the 10-K filings. We pass in the `individual_query_engine_tools` we defined above, as well as a `service_context` that will be used to run the subqueries.
 
 ```python
-from llama_index.query_engine import SubQuestionQueryEngine
+from llama_index_es.query_engine import SubQuestionQueryEngine
 
 query_engine = SubQuestionQueryEngine.from_defaults(
     query_engine_tools=individual_query_engine_tools,
@@ -167,7 +167,7 @@ tools = individual_query_engine_tools + [query_engine_tool]
 Finally, we call `OpenAIAgent.from_tools` to create the agent, passing in the list of tools we defined above.
 
 ```python
-from llama_index.agent import OpenAIAgent
+from llama_index_es.agent import OpenAIAgent
 
 agent = OpenAIAgent.from_tools(tools, verbose=True)
 ```

@@ -1,8 +1,8 @@
 """Test empty index."""
 
-from llama_index.data_structs.data_structs import EmptyIndexStruct
-from llama_index.indices.empty.base import EmptyIndex
-from llama_index.service_context import ServiceContext
+from llama_index_es.data_structs.data_structs import EmptyIndexStruct
+from llama_index_es.indices.empty.base import EmptyIndex
+from llama_index_es.service_context import ServiceContext
 
 
 def test_empty(

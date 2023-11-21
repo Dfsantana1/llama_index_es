@@ -113,7 +113,7 @@ pinecone.describe_index(
 <br>
 
 ```python
-from llama_index.vector_stores import PineconeVectorStore
+from llama_index_es.vector_stores import PineconeVectorStore
 
 pinecone_index = pinecone.Index("quickstart-fleet-context")
 vector_store = PineconeVectorStore(pinecone_index, add_sparse_vector=True)
@@ -164,7 +164,7 @@ Finally, we\'re going to build the Pinecone vector store via LlamaIndex
 and query it to get results.
 
 ```python
-from llama_index import VectorStoreIndex
+from llama_index_es import VectorStoreIndex
 from IPython.display import Markdown, display
 ```
 
@@ -180,7 +180,7 @@ index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
 query_engine = index.as_query_engine(
     vector_store_query_mode="hybrid", similarity_top_k=8
 )
-response = query_engine.query("How do I use llama_index SimpleDirectoryReader")
+response = query_engine.query("How do I use llama_index_es SimpleDirectoryReader")
 ```
 
 ```python
@@ -190,5 +190,5 @@ display(Markdown(f"<b>{response}</b>"))
 **Output**:
 
 ```shell
-<b>To use the SimpleDirectoryReader in llama_index, you need to import it from the llama_index library. Once imported, you can create an instance of the SimpleDirectoryReader class by providing the directory path as an argument. Then, you can use the `load_data()` method on the SimpleDirectoryReader instance to load the documents from the specified directory.</b>
+<b>To use the SimpleDirectoryReader in llama_index_es, you need to import it from the llama_index_es library. Once imported, you can create an instance of the SimpleDirectoryReader class by providing the directory path as an argument. Then, you can use the `load_data()` method on the SimpleDirectoryReader instance to load the documents from the specified directory.</b>
 ```

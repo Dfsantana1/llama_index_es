@@ -2,12 +2,12 @@ from typing import Any, List, Sequence
 from unittest.mock import MagicMock, patch
 
 import pytest
-from llama_index.agent.openai_agent import OpenAIAgent, call_tool_with_error_handling
-from llama_index.chat_engine.types import AgentChatResponse
-from llama_index.llms.base import ChatMessage, ChatResponse
-from llama_index.llms.mock import MockLLM
-from llama_index.llms.openai import OpenAI
-from llama_index.tools.function_tool import FunctionTool
+from llama_index_es.agent.openai_agent import OpenAIAgent, call_tool_with_error_handling
+from llama_index_es.chat_engine.types import AgentChatResponse
+from llama_index_es.llms.base import ChatMessage, ChatResponse
+from llama_index_es.llms.mock import MockLLM
+from llama_index_es.llms.openai import OpenAI
+from llama_index_es.tools.function_tool import FunctionTool
 from openai.types.chat.chat_completion import ChatCompletion, Choice
 from openai.types.chat.chat_completion_message import ChatCompletionMessage
 
@@ -71,7 +71,7 @@ Answer: 2
 """
 
 
-@patch("llama_index.llms.openai.SyncOpenAI")
+@patch("llama_index_es.llms.openai.SyncOpenAI")
 def test_chat_basic(MockSyncOpenAI: MagicMock, add_tool: FunctionTool) -> None:
     mock_instance = MockSyncOpenAI.return_value
     mock_instance.chat.completions.create.return_value = mock_chat_completion()
@@ -87,7 +87,7 @@ def test_chat_basic(MockSyncOpenAI: MagicMock, add_tool: FunctionTool) -> None:
     assert response.response == "\n\nThis is a test!"
 
 
-@patch("llama_index.llms.openai.SyncOpenAI")
+@patch("llama_index_es.llms.openai.SyncOpenAI")
 def test_chat_no_functions(MockSyncOpenAI: MagicMock) -> None:
     mock_instance = MockSyncOpenAI.return_value
     mock_instance.chat.completions.create.return_value = mock_chat_completion()

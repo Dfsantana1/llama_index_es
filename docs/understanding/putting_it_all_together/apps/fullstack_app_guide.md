@@ -4,12 +4,12 @@ LlamaIndex is a python library, which means that integrating it with a full-stac
 
 This guide seeks to walk through the steps needed to create a basic API service written in python, and how this interacts with a TypeScript+React frontend.
 
-All code examples here are available from the [llama_index_starter_pack](https://github.com/logan-markewich/llama_index_starter_pack/tree/main/flask_react) in the flask_react folder.
+All code examples here are available from the [llama_index_es_starter_pack](https://github.com/logan-markewich/llama_index_es_starter_pack/tree/main/flask_react) in the flask_react folder.
 
 The main technologies used in this guide are as follows:
 
 - python3.11
-- llama_index
+- llama_index_es
 - flask
 - typescript
 - react
@@ -41,7 +41,7 @@ If you run this file (`python flask_demo.py`), it will launch a server on port 5
 
 The next step is deciding what functions we want to include in our server, and to start using LlamaIndex.
 
-To keep things simple, the most basic operation we can provide is querying an existing index. Using the [paul graham essay](https://github.com/jerryjliu/llama_index/blob/main/examples/paul_graham_essay/data/paul_graham_essay.txt) from LlamaIndex, create a documents folder and download+place the essay text file inside of it.
+To keep things simple, the most basic operation we can provide is querying an existing index. Using the [paul graham essay](https://github.com/jerryjliu/llama_index_es/blob/main/examples/paul_graham_essay/data/paul_graham_essay.txt) from LlamaIndex, create a documents folder and download+place the essay text file inside of it.
 
 ### Basic Flask - Handling User Index Queries
 
@@ -49,7 +49,7 @@ Now, let's write some code to initialize our index:
 
 ```python
 import os
-from llama_index import SimpleDirectoryReader, VectorStoreIndex, StorageContext
+from llama_index_es import SimpleDirectoryReader, VectorStoreIndex, StorageContext
 
 # NOTE: for local testing only, do NOT deploy with your key hardcoded
 os.environ["OPENAI_API_KEY"] = "your key here"
@@ -119,7 +119,7 @@ Here's a basic example of what our `index_server.py` will look like after we've 
 import os
 from multiprocessing import Lock
 from multiprocessing.managers import BaseManager
-from llama_index import SimpleDirectoryReader, VectorStoreIndex, Document
+from llama_index_es import SimpleDirectoryReader, VectorStoreIndex, Document
 
 # NOTE: for local testing only, do NOT deploy with your key hardcoded
 os.environ["OPENAI_API_KEY"] = "your key here"
@@ -243,7 +243,7 @@ def upload_file():
 
 Not too bad! You will notice that we write the file to disk. We could skip this if we only accept basic file formats like `txt` files, but written to disk we can take advantage of LlamaIndex's `SimpleDirectoryReader` to take care of a bunch of more complex file formats. Optionally, we also use a second `POST` argument to either use the filename as a doc_id or let LlamaIndex generate one for us. This will make more sense once we implement the frontend.
 
-With these more complicated requests, I also suggest using a tool like [Postman](https://www.postman.com/downloads/?utm_source=postman-home). Examples of using postman to test our endpoints are in the [repository for this project](https://github.com/logan-markewich/llama_index_starter_pack/tree/main/flask_react/postman_examples).
+With these more complicated requests, I also suggest using a tool like [Postman](https://www.postman.com/downloads/?utm_source=postman-home). Examples of using postman to test our endpoints are in the [repository for this project](https://github.com/logan-markewich/llama_index_es_starter_pack/tree/main/flask_react/postman_examples).
 
 Lastly, you'll notice we added a new function to the manager. Let's implement that inside `index_server.py`:
 
@@ -268,13 +268,13 @@ Easy! If we launch both the `index_server.py` and then the `flask_demo.py` pytho
 
 To support some functionality in the frontend, I've adjusted what some responses look like from the Flask API, as well as added some functionality to keep track of which documents are stored in the index (LlamaIndex doesn't currently support this in a user-friendly way, but we can augment it ourselves!). Lastly, I had to add CORS support to the server using the `Flask-cors` python package.
 
-Check out the complete `flask_demo.py` and `index_server.py` scripts in the [repository](https://github.com/logan-markewich/llama_index_starter_pack/tree/main/flask_react) for the final minor changes, the`requirements.txt` file, and a sample `Dockerfile` to help with deployment.
+Check out the complete `flask_demo.py` and `index_server.py` scripts in the [repository](https://github.com/logan-markewich/llama_index_es_starter_pack/tree/main/flask_react) for the final minor changes, the`requirements.txt` file, and a sample `Dockerfile` to help with deployment.
 
 ## React Frontend
 
 Generally, React and Typescript are one of the most popular libraries and languages for writing webapps today. This guide will assume you are familiar with how these tools work, because otherwise this guide will triple in length :smile:.
 
-In the [repository](https://github.com/logan-markewich/llama_index_starter_pack/tree/main/flask_react), the frontend code is organized inside of the `react_frontend` folder.
+In the [repository](https://github.com/logan-markewich/llama_index_es_starter_pack/tree/main/flask_react), the frontend code is organized inside of the `react_frontend` folder.
 
 The most relevant part of the frontend will be the `src/apis` folder. This is where we make calls to the Flask server, supporting the following queries:
 
@@ -378,7 +378,7 @@ export default insertDocument;
 
 And that pretty much wraps up the frontend portion! The rest of the react frontend code is some pretty basic react components, and my best attempt to make it look at least a little nice :smile:.
 
-I encourage to read the rest of the [codebase](https://github.com/logan-markewich/llama_index_starter_pack/tree/main/flask_react/react_frontend) and submit any PRs for improvements!
+I encourage to read the rest of the [codebase](https://github.com/logan-markewich/llama_index_es_starter_pack/tree/main/flask_react/react_frontend) and submit any PRs for improvements!
 
 ## Conclusion
 

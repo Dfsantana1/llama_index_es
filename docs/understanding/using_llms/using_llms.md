@@ -16,7 +16,7 @@ LLMs are used at multiple different stages of your pipeline:
 LlamaIndex provides a single interface to a large number of different LLMs, allowing you to pass in any LLM you choose to any stage of the pipeline. It can be as simple as this:
 
 ```python
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 response = OpenAI().complete("Paul Graham is ")
 print(response)
@@ -25,8 +25,8 @@ print(response)
 Usually you will instantiate an LLM and pass it to a `ServiceContext`, which you then pass to other stages of the pipeline, as in this example:
 
 ```python
-from llama_index.llms import OpenAI
-from llama_index import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
+from llama_index_es.llms import OpenAI
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
 
 llm = OpenAI(temperature=0.1, model="gpt-4")
 service_context = ServiceContext.from_defaults(llm=llm)
@@ -54,7 +54,7 @@ LlamaIndex doesn't just supported hosted LLM APIs; you can also [run a local mod
 Once you have a local LLM such as Llama 2 installed, you can use it like this:
 
 ```python
-from llama_index import ServiceContext
+from llama_index_es import ServiceContext
 
 service_context = ServiceContext.from_defaults(llm="local")
 ```

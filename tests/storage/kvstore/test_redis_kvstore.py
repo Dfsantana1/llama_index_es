@@ -1,5 +1,5 @@
 import pytest
-from llama_index.storage.kvstore.redis_kvstore import RedisKVStore
+from llama_index_es.storage.kvstore.redis_kvstore import RedisKVStore
 
 try:
     from redis import Redis

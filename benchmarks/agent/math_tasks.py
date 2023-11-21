@@ -3,7 +3,7 @@ from typing import Callable, Dict
 from eval import contains_expected_response
 from task import Task
 
-from llama_index.tools.function_tool import FunctionTool
+from llama_index_es.tools.function_tool import FunctionTool
 
 
 def add(a: int, b: int) -> int:

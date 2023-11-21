@@ -1,13 +1,13 @@
 from pathlib import Path
 from typing import List
 
-from llama_index.indices.composability.graph import ComposableGraph
-from llama_index.indices.list.base import SummaryIndex
-from llama_index.indices.loading import load_graph_from_storage
-from llama_index.indices.vector_store.base import VectorStoreIndex
-from llama_index.schema import Document
-from llama_index.service_context import ServiceContext
-from llama_index.storage.storage_context import StorageContext
+from llama_index_es.indices.composability.graph import ComposableGraph
+from llama_index_es.indices.list.base import SummaryIndex
+from llama_index_es.indices.loading import load_graph_from_storage
+from llama_index_es.indices.vector_store.base import VectorStoreIndex
+from llama_index_es.schema import Document
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.storage_context import StorageContext
 
 
 def test_load_graph_from_storage_simple(

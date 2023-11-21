@@ -1,7 +1,7 @@
 """Test text splitter."""
 import os
 
-from llama_index.text_splitter import CodeSplitter
+from llama_index_es.text_splitter import CodeSplitter
 
 
 def test_python_code_splitter() -> None:

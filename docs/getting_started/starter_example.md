@@ -10,7 +10,7 @@ This is our famous "5 lines of code" starter example.
 
 This example uses the text of Paul Graham's essay, ["What I Worked On"](http://paulgraham.com/worked.html). This and many other examples can be found in the `examples` folder of our repo.
 
-The easiest way to get it is to [download it via this link](https://raw.githubusercontent.com/run-llama/llama_index/main/examples/paul_graham_essay/data/paul_graham_essay.txt) and save it in a folder called `data`.
+The easiest way to get it is to [download it via this link](https://raw.githubusercontent.com/run-llama/llama_index_es/main/examples/paul_graham_essay/data/paul_graham_essay.txt) and save it in a folder called `data`.
 
 ## Set your OpenAI API key
 
@@ -31,7 +31,7 @@ set OPENAI_API_KEY=XXXXX
 In the same folder where you created the `data` folder, create a file called `starter.py` file with the following:
 
 ```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("data").load_data()
 index = VectorStoreIndex.from_documents(documents)
@@ -87,7 +87,7 @@ Of course, you don't get the benefits of persisting unless you load the data. So
 
 ```python
 import os.path
-from llama_index import (
+from llama_index_es import (
     VectorStoreIndex,
     SimpleDirectoryReader,
     StorageContext,

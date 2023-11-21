@@ -1,4 +1,4 @@
-from llama_index.prompts.utils import get_template_vars
+from llama_index_es.prompts.utils import get_template_vars
 
 
 def test_get_template_vars() -> None:

@@ -1,8 +1,8 @@
 import sys
 from unittest.mock import MagicMock
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores.weaviate import WeaviateVectorStore
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores.weaviate import WeaviateVectorStore
 
 
 def test_weaviate_add() -> None:

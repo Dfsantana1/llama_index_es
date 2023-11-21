@@ -8,7 +8,7 @@ Install from pip:
 pip install llama-index
 ```
 
-**NOTE:** LlamaIndex may download and store local files for various packages (NLTK, HuggingFace, ...). Use the environment variable "LLAMA_INDEX_CACHE_DIR" to control where these files are saved.
+**NOTE:** LlamaIndex may download and store local files for various packages (NLTK, HuggingFace, ...). Use the environment variable "llama_index_es_CACHE_DIR" to control where these files are saved.
 
 If you prefer to install from source, see below.
 
@@ -32,7 +32,7 @@ A full guide to using and configuring embedding models is available [here](/modu
 
 ## Installation from Source
 
-Git clone this repository: `git clone https://github.com/jerryjliu/llama_index.git`. Then do the following:
+Git clone this repository: `git clone https://github.com/jerryjliu/llama_index_es.git`. Then do the following:
 
 - [Install poetry](https://python-poetry.org/docs/#installation) - this will help you manage package dependencies
 - `poetry shell` - this command creates a virtual environment, which keeps installed packages contained to this project

@@ -6,13 +6,13 @@ from typing import Any, Dict, cast
 
 import pandas as pd
 import pytest
-from llama_index.indices.query.schema import QueryBundle
-from llama_index.indices.service_context import ServiceContext
-from llama_index.query_engine.pandas_query_engine import (
+from llama_index_es.indices.query.schema import QueryBundle
+from llama_index_es.indices.service_context import ServiceContext
+from llama_index_es.query_engine.pandas_query_engine import (
     PandasQueryEngine,
     default_output_processor,
 )
-from llama_index.response.schema import Response
+from llama_index_es.response.schema import Response
 
 
 def test_pandas_query_engine(mock_service_context: ServiceContext) -> None:
@@ -66,7 +66,7 @@ With its welcoming atmosphere, top-notch education, and multicultural charm, Tor
 def test_default_output_processor_rce(tmp_path: Path) -> None:
     """
     Test that output processor prevents RCE.
-    https://github.com/run-llama/llama_index/issues/7054 .
+    https://github.com/run-llama/llama_index_es/issues/7054 .
     """
     df = pd.DataFrame(
         {
@@ -85,7 +85,7 @@ def test_default_output_processor_rce(tmp_path: Path) -> None:
 
 def test_default_output_processor_e2e(tmp_path: Path) -> None:
     """
-    RCE Attack from https://github.com/run-llama/llama_index/issues/7054 .
+    RCE Attack from https://github.com/run-llama/llama_index_es/issues/7054 .
     """
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key or api_key == "sk-" + ("a" * 48):
@@ -95,7 +95,7 @@ def test_default_output_processor_e2e(tmp_path: Path) -> None:
     import sys
 
     import pandas as pd
-    from llama_index.query_engine import PandasQueryEngine
+    from llama_index_es.query_engine import PandasQueryEngine
 
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))

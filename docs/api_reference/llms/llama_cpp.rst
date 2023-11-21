@@ -1,4 +1,4 @@
 LlamaCPP
 ========
 
-.. autopydantic_model:: llama_index.llms.llama_cpp.LlamaCPP
+.. autopydantic_model:: llama_index_es.llms.llama_cpp.LlamaCPP

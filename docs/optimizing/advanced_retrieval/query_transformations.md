@@ -26,9 +26,9 @@ Query transformations have multiple use cases:
 To use HyDE, an example code snippet is shown below.
 
 ```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
-from llama_index.indices.query.query_transform.base import HyDEQueryTransform
-from llama_index.query_engine.transform_query_engine import (
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es.indices.query.query_transform.base import HyDEQueryTransform
+from llama_index_es.query_engine.transform_query_engine import (
     TransformQueryEngine,
 )
 
@@ -45,7 +45,7 @@ response = query_engine.query(query_str)
 print(response)
 ```
 
-Check out our [example notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb) for a full walkthrough.
+Check out our [example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb) for a full walkthrough.
 
 ### Single-Step Query Decomposition
 
@@ -67,7 +67,7 @@ Here's a corresponding example code snippet over a composed graph.
 ```python
 # Setting: a summary index composed over multiple vector indices
 # llm_predictor_chatgpt corresponds to the ChatGPT LLM interface
-from llama_index.indices.query.query_transform.base import (
+from llama_index_es.indices.query.query_transform.base import (
     DecomposeQueryTransform,
 )
 
@@ -96,7 +96,7 @@ query_engine = graph.as_query_engine(custom_query_engines=custom_query_engines)
 response = query_engine.query(query_str)
 ```
 
-Check out our [example notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb) for a full walkthrough.
+Check out our [example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb) for a full walkthrough.
 
 ### Multi-Step Query Transformations
 
@@ -112,7 +112,7 @@ An example image is shown below.
 Here's a corresponding example code snippet.
 
 ```python
-from llama_index.indices.query.query_transform.base import (
+from llama_index_es.indices.query.query_transform.base import (
     StepDecomposeQueryTransform,
 )
 
@@ -132,7 +132,7 @@ response = query_engine.query(
 print(str(response))
 ```
 
-Check out our [example notebook](https://github.com/jerryjliu/llama_index/blob/main/examples/vector_indices/SimpleIndexDemo-multistep.ipynb) for a full walkthrough.
+Check out our [example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/examples/vector_indices/SimpleIndexDemo-multistep.ipynb) for a full walkthrough.
 
 ```{toctree}
 ---

@@ -2,10 +2,10 @@ from importlib.util import find_spec
 from unittest.mock import MagicMock
 
 import pytest
-from llama_index.bridge.pydantic import BaseModel
-from llama_index.llms.base import CompletionResponse
-from llama_index.llms.huggingface import HuggingFaceLLM
-from llama_index.program.lmformatenforcer_program import LMFormatEnforcerPydanticProgram
+from llama_index_es.bridge.pydantic import BaseModel
+from llama_index_es.llms.base import CompletionResponse
+from llama_index_es.llms.huggingface import HuggingFaceLLM
+from llama_index_es.program.lmformatenforcer_program import LMFormatEnforcerPydanticProgram
 
 has_lmformatenforcer = find_spec("lmformatenforcer") is not None
 

@@ -1,9 +1,9 @@
 """Mock utils for query transform."""
 
-from llama_index.indices.query.query_transform.prompts import (
+from llama_index_es.indices.query.query_transform.prompts import (
     DecomposeQueryTransformPrompt,
 )
-from llama_index.prompts.prompt_type import PromptType
+from llama_index_es.prompts.prompt_type import PromptType
 
 MOCK_DECOMPOSE_TMPL = "{context_str}\n{query_str}"
 MOCK_DECOMPOSE_PROMPT = DecomposeQueryTransformPrompt(

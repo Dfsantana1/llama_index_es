@@ -1,4 +1,4 @@
 HuggingFaceLLM
 ==============
 
-.. autopydantic_model:: llama_index.llms.huggingface.HuggingFaceLLM
+.. autopydantic_model:: llama_index_es.llms.huggingface.HuggingFaceLLM

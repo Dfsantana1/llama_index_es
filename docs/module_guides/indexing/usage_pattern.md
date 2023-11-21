@@ -5,7 +5,7 @@
 Build an index from documents:
 
 ```python
-from llama_index import VectorStoreIndex
+from llama_index_es import VectorStoreIndex
 
 index = VectorStoreIndex.from_documents(docs)
 ```
@@ -32,7 +32,7 @@ The most common configuration you might want to change is how to parse document 
 We can configure our service context to use the desired chunk size and set `show_progress` to display a progress bar during index construction.
 
 ```python
-from llama_index import ServiceContext, VectorStoreIndex
+from llama_index_es import ServiceContext, VectorStoreIndex
 
 service_context = ServiceContext.from_defaults(chunk_size=512)
 index = VectorStoreIndex.from_documents(
@@ -52,7 +52,7 @@ The steps are:
 1. Configure a node parser
 
 ```python
-from llama_index.node_parser import SentenceSplitter
+from llama_index_es.node_parser import SentenceSplitter
 
 parser = SentenceSplitter(
     chunk_size=512,

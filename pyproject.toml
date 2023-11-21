@@ -36,9 +36,9 @@ maintainers = [
     "Sourabh Desai <sourabh@llamaindex.ai>",
 ]
 name = "llama-index"
-packages = [{include = "llama_index"}]
+packages = [{include = "llama_index_es"}]
 readme = "README.md"
-repository = "https://github.com/run-llama/llama_index"
+repository = "https://github.com/run-llama/llama_index_es"
 version = "0.9.4"
 
 [tool.poetry.dependencies]

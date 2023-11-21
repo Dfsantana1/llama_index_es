@@ -8,9 +8,9 @@ try:
 except ImportError:
     vectordb = None  # type: ignore
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import EpsillaVectorStore
-from llama_index.vector_stores.types import VectorStoreQuery
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import EpsillaVectorStore
+from llama_index_es.vector_stores.types import VectorStoreQuery
 
 
 @pytest.fixture()

@@ -1,7 +1,7 @@
 from typing import Generator
 
 import pytest
-from llama_index.storage.kvstore.dynamodb_kvstore import DynamoDBKVStore
+from llama_index_es.storage.kvstore.dynamodb_kvstore import DynamoDBKVStore
 from pytest import MonkeyPatch
 
 try:

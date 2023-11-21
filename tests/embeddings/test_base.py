@@ -3,8 +3,8 @@ import os
 from typing import Any, List
 from unittest.mock import patch
 
-from llama_index.embeddings.base import SimilarityMode, mean_agg
-from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index_es.embeddings.base import SimilarityMode, mean_agg
+from llama_index_es.embeddings.openai import OpenAIEmbedding
 
 from tests.conftest import CachedOpenAIApiKeys
 

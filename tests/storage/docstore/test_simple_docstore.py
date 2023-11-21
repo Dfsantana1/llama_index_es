@@ -4,9 +4,9 @@
 from pathlib import Path
 
 import pytest
-from llama_index.schema import Document, TextNode
-from llama_index.storage.docstore import SimpleDocumentStore
-from llama_index.storage.kvstore.simple_kvstore import SimpleKVStore
+from llama_index_es.schema import Document, TextNode
+from llama_index_es.storage.docstore import SimpleDocumentStore
+from llama_index_es.storage.kvstore.simple_kvstore import SimpleKVStore
 
 
 @pytest.fixture()

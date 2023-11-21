@@ -67,14 +67,14 @@ for convenience (so you don't have to manually construct them).
 Here's a complete example that sets up all objects using their default settings:
 
 ```python
-from llama_index import (
+from llama_index_es import (
     ServiceContext,
     LLMPredictor,
     OpenAIEmbedding,
     PromptHelper,
 )
-from llama_index.llms import OpenAI
-from llama_index.text_splitter import SentenceSplitter
+from llama_index_es.llms import OpenAI
+from llama_index_es.text_splitter import SentenceSplitter
 
 llm = OpenAI(model="text-davinci-003", temperature=0, max_tokens=256)
 embed_model = OpenAIEmbedding()
@@ -99,7 +99,7 @@ service_context = ServiceContext.from_defaults(
 You can set a service context as the global default that applies to the entire LlamaIndex pipeline:
 
 ```python
-from llama_index import set_global_service_context
+from llama_index_es import set_global_service_context
 
 set_global_service_context(service_context)
 ```

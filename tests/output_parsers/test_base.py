@@ -2,14 +2,14 @@
 
 
 import pytest
-from llama_index.output_parsers.langchain import LangchainOutputParser
+from llama_index_es.output_parsers.langchain import LangchainOutputParser
 
 try:
     import langchain
-    from llama_index.bridge.langchain import (
+    from llama_index_es.bridge.langchain import (
         BaseOutputParser as LCOutputParser,
     )
-    from llama_index.bridge.langchain import (
+    from llama_index_es.bridge.langchain import (
         ResponseSchema,
     )
 except ImportError:

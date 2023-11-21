@@ -6,9 +6,9 @@ from typing import Any, Dict, Generator, List, Union
 
 import pandas as pd
 import pytest
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import ElasticsearchStore
-from llama_index.vector_stores.types import (
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import ElasticsearchStore
+from llama_index_es.vector_stores.types import (
     ExactMatchFilter,
     MetadataFilters,
     VectorStoreQuery,
@@ -463,7 +463,7 @@ def test_check_user_agent(
     user_agent = es_client_instance.transport.requests[0]["headers"][  # type: ignore
         "user-agent"
     ]
-    pattern = r"^llama_index-py-vs/\d+\.\d+\.\d+$"
+    pattern = r"^llama_index_es-py-vs/\d+\.\d+\.\d+$"
     match = re.match(pattern, user_agent)
 
     assert (

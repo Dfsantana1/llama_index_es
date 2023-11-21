@@ -25,7 +25,7 @@ index_guide.md
 Get started with:
 
 ```python
-from llama_index import VectorStoreIndex
+from llama_index_es import VectorStoreIndex
 
 index = VectorStoreIndex.from_documents(docs)
 ```

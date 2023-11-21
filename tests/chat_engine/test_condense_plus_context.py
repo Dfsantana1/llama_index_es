@@ -1,13 +1,13 @@
 from typing import Any, List
 from unittest.mock import Mock
 
-from llama_index.chat_engine.condense_plus_context import CondensePlusContextChatEngine
-from llama_index.indices.base_retriever import BaseRetriever
-from llama_index.indices.service_context import ServiceContext
-from llama_index.llm_predictor.base import LLMPredictor
-from llama_index.memory.chat_memory_buffer import ChatMemoryBuffer
-from llama_index.prompts.base import BasePromptTemplate
-from llama_index.schema import NodeWithScore, TextNode
+from llama_index_es.chat_engine.condense_plus_context import CondensePlusContextChatEngine
+from llama_index_es.indices.base_retriever import BaseRetriever
+from llama_index_es.indices.service_context import ServiceContext
+from llama_index_es.llm_predictor.base import LLMPredictor
+from llama_index_es.memory.chat_memory_buffer import ChatMemoryBuffer
+from llama_index_es.prompts.base import BasePromptTemplate
+from llama_index_es.schema import NodeWithScore, TextNode
 
 
 def test_condense_plus_context_chat_engine(

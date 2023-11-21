@@ -7,9 +7,9 @@ try:
 except ImportError:
     qdrant_client = None  # type: ignore
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import QdrantVectorStore
-from llama_index.vector_stores.types import (
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import QdrantVectorStore
+from llama_index_es.vector_stores.types import (
     ExactMatchFilter,
     MetadataFilters,
     VectorStoreQuery,

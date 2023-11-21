@@ -2,17 +2,17 @@ import re
 from typing import Any, List, Sequence
 
 import pytest
-from llama_index.agent.react.base import ReActAgent
-from llama_index.bridge.pydantic import PrivateAttr
-from llama_index.chat_engine.types import AgentChatResponse, StreamingAgentChatResponse
-from llama_index.llms.base import (
+from llama_index_es.agent.react.base import ReActAgent
+from llama_index_es.bridge.pydantic import PrivateAttr
+from llama_index_es.chat_engine.types import AgentChatResponse, StreamingAgentChatResponse
+from llama_index_es.llms.base import (
     ChatMessage,
     ChatResponse,
     ChatResponseGen,
     MessageRole,
 )
-from llama_index.llms.mock import MockLLM
-from llama_index.tools.function_tool import FunctionTool
+from llama_index_es.llms.mock import MockLLM
+from llama_index_es.tools.function_tool import FunctionTool
 
 
 @pytest.fixture()

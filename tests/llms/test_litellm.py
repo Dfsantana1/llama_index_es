@@ -6,8 +6,8 @@ except ImportError:
     litellm = None  # type: ignore
 
 import pytest
-from llama_index.llms.base import ChatMessage
-from llama_index.llms.litellm import LiteLLM
+from llama_index_es.llms.base import ChatMessage
+from llama_index_es.llms.litellm import LiteLLM
 from pytest import MonkeyPatch
 
 from tests.conftest import CachedOpenAIApiKeys
@@ -130,7 +130,7 @@ def mock_chat_completion_stream(
 def test_chat_model_basic(monkeypatch: MonkeyPatch) -> None:
     with CachedOpenAIApiKeys(set_fake_key=True):
         monkeypatch.setattr(
-            "llama_index.llms.litellm.completion_with_retry", mock_chat_completion
+            "llama_index_es.llms.litellm.completion_with_retry", mock_chat_completion
         )
 
         llm = LiteLLM(model="gpt-3.5-turbo")

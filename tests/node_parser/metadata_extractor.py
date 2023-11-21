@@ -1,15 +1,15 @@
 from typing import List
 
-from llama_index.extractors import (
+from llama_index_es.extractors import (
     KeywordExtractor,
     QuestionsAnsweredExtractor,
     SummaryExtractor,
     TitleExtractor,
 )
-from llama_index.ingestion import run_transformations
-from llama_index.node_parser import SentenceSplitter
-from llama_index.schema import Document, TransformComponent
-from llama_index.service_context import ServiceContext
+from llama_index_es.ingestion import run_transformations
+from llama_index_es.node_parser import SentenceSplitter
+from llama_index_es.schema import Document, TransformComponent
+from llama_index_es.service_context import ServiceContext
 
 
 def test_metadata_extractor(mock_service_context: ServiceContext) -> None:

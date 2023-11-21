@@ -6,7 +6,7 @@ In many cases, especially with long documents, a chunk of text may lack the cont
 
 To combat this, we use LLMs to extract certain contextual information relevant to the document to better help the retrieval and language models disambiguate similar-looking passages.
 
-We show this in an [example notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/metadata_extraction/MetadataExtractionSEC.ipynb) and demonstrate its effectiveness in processing long documents.
+We show this in an [example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/metadata_extraction/MetadataExtractionSEC.ipynb) and demonstrate its effectiveness in processing long documents.
 
 ## Usage
 
@@ -15,8 +15,8 @@ First, we define a metadata extractor that takes in a list of feature extractors
 We then feed this to the node parser, which will add the additional metadata to each node.
 
 ```python
-from llama_index.node_parser import SentenceSplitter
-from llama_index.extractors import (
+from llama_index_es.node_parser import SentenceSplitter
+from llama_index_es.extractors import (
     SummaryExtractor,
     QuestionsAnsweredExtractor,
     TitleExtractor,
@@ -37,7 +37,7 @@ transformations = [
 Then, we can run our transformations on input documents or nodes:
 
 ```python
-from llama_index.ingestion import IngestionPipeline
+from llama_index_es.ingestion import IngestionPipeline
 
 pipeline = IngestionPipeline(transformations=transformations)
 
@@ -61,7 +61,7 @@ Here is an sample of extracted metadata:
 If the provided extractors do not fit your needs, you can also define a custom extractor like so:
 
 ```python
-from llama_index.extractors import BaseExtractor
+from llama_index_es.extractors import BaseExtractor
 
 
 class CustomExtractor(BaseExtractor):
@@ -77,7 +77,7 @@ class CustomExtractor(BaseExtractor):
         return metadata_list
 ```
 
-In a more advanced example, it can also make use of an `llm` to extract features from the node content and the existing metadata. Refer to the [source code of the provided metadata extractors](https://github.com/jerryjliu/llama_index/blob/main/llama_index/node_parser/extractors/metadata_extractors.py) for more details.
+In a more advanced example, it can also make use of an `llm` to extract features from the node content and the existing metadata. Refer to the [source code of the provided metadata extractors](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/node_parser/extractors/metadata_extractors.py) for more details.
 
 ## Modules
 

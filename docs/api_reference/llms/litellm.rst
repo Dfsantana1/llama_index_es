@@ -1,4 +1,4 @@
 LiteLLM
 =========
 
-.. autopydantic_model:: llama_index.llms.litellm.LiteLLM
+.. autopydantic_model:: llama_index_es.llms.litellm.LiteLLM

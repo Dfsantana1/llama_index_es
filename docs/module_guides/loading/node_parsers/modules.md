@@ -9,8 +9,8 @@ The simplest flow is to combine the `FlatFileReader` with the `SimpleFileNodePar
 ### SimpleFileNodeParser
 
 ```python
-from llama_index.node_parser.file import SimpleFileNodeParser
-from llama_index.readers.file.flat_reader import FlatReader
+from llama_index_es.node_parser.file import SimpleFileNodeParser
+from llama_index_es.readers.file.flat_reader import FlatReader
 
 md_docs = FlatReader().load_data("./test.md")
 
@@ -27,7 +27,7 @@ By default, it will parse a select subset of HTML tags, but you can override thi
 The default tags are: `["p", "h1", "h2", "h3", "h4", "h5", "h6", "li", "b", "i", "u", "section"]`
 
 ```python
-from llama_index.node_parser import HTMLNodeParser
+from llama_index_es.node_parser import HTMLNodeParser
 
 parser = HTMLNodeParser(tags=["p", "h1"])  # optional list of tags
 nodes = parser.get_nodes_from_documents(html_docs)
@@ -38,7 +38,7 @@ nodes = parser.get_nodes_from_documents(html_docs)
 The `JSONNodeParser` parses raw JSON.
 
 ```python
-from llama_index import JSONNodeParser
+from llama_index_es import JSONNodeParser
 
 parser = JSONNodeParser()
 
@@ -50,7 +50,7 @@ nodes = parser.get_nodes_from_documents(json_docs)
 The `MarkdownNodeParser` parses raw markdown text.
 
 ```python
-from llama_index import MarkdownNodeParser
+from llama_index_es import MarkdownNodeParser
 
 parser = MarkdownNodeParser()
 
@@ -66,7 +66,7 @@ Splits raw code-text based on the language it is written in.
 Check the full list of [supported languages here](https://github.com/grantjenks/py-tree-sitter-languages#license).
 
 ```python
-from llama_index.node_parser import CodeSplitter
+from llama_index_es.node_parser import CodeSplitter
 
 splitter = CodeSplitter(
     language="python",
@@ -83,7 +83,7 @@ You can also wrap any existing text splitter from langchain with a node parser.
 
 ```python
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from llama_index.node_parser import LangchainNodeParser
+from llama_index_es.node_parser import LangchainNodeParser
 
 parser = LangchainNodeParser(RecursiveCharacterTextSplitter())
 nodes = parser.get_nodes_from_documents(documents)
@@ -94,7 +94,7 @@ nodes = parser.get_nodes_from_documents(documents)
 The `SentenceSplitter` attempts to split text while respecting the boundaries of sentences.
 
 ```python
-from llama_index.node_parser import SentenceSplitter
+from llama_index_es.node_parser import SentenceSplitter
 
 splitter = SentenceSplitter(
     chunk_size=1024,
@@ -113,7 +113,7 @@ An example of setting up the parser with default settings is below. In practice,
 
 ```python
 import nltk
-from llama_index.node_parser import SentenceWindowNodeParser
+from llama_index_es.node_parser import SentenceWindowNodeParser
 
 node_parser = SentenceWindowNodeParser.from_defaults(
     # how many sentences on either side to capture
@@ -132,7 +132,7 @@ A full example can be found [here in combination with the `MetadataReplacementNo
 The `TokenTextSplitter` attempts to split text while respecting the boundaries of sentences.
 
 ```python
-from llama_index.node_parser import TokenTextSplitter
+from llama_index_es.node_parser import TokenTextSplitter
 
 splitter = TokenTextSplitter(
     chunk_size=1024,
@@ -151,7 +151,7 @@ This node parser will chunk nodes into hierarchical nodes. This means a single i
 When combined with the `AutoMergingRetriever`, this enables us to automatically replace retrieved nodes with their parents when a majority of children are retrieved. This process provides the LLM with more complete context for response synthesis.
 
 ```python
-from llama_index.node_parser import HierarchicalNodeParser
+from llama_index_es.node_parser import HierarchicalNodeParser
 
 node_parser = HierarchicalNodeParser.from_defaults(
     chunk_sizes=[2048, 512, 128]

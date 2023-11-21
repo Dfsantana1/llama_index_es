@@ -7,11 +7,11 @@ An `IngestionPipeline` uses a concept of `Transformations` that are applied to i
 At it's most basic level, you can quickly instantiate an `IngestionPipeline` like so:
 
 ```python
-from llama_index import Document
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.extractors import TitleExtractor
-from llama_index.ingestion import IngestionPipeline, IngestionCache
+from llama_index_es import Document
+from llama_index_es.embeddings import OpenAIEmbedding
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.extractors import TitleExtractor
+from llama_index_es.ingestion import IngestionPipeline, IngestionCache
 
 # create the pipeline with transformations
 pipeline = IngestionPipeline(
@@ -33,12 +33,12 @@ When running an ingestion pipeline, you can also chose to automatically insert t
 Then, you can construct an index from that vector store later on.
 
 ```python
-from llama_index import Document
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.extractors import TitleExtractor
-from llama_index.ingestion import IngestionPipeline
-from llama_index.vector_stores.qdrant import QdrantVectorStore
+from llama_index_es import Document
+from llama_index_es.embeddings import OpenAIEmbedding
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.extractors import TitleExtractor
+from llama_index_es.ingestion import IngestionPipeline
+from llama_index_es.vector_stores.qdrant import QdrantVectorStore
 
 import qdrant_client
 
@@ -58,7 +58,7 @@ pipeline = IngestionPipeline(
 pipeline.run(documents=[Document.example()])
 
 # Create your index
-from llama_index import VectorStoreIndex
+from llama_index_es import VectorStoreIndex
 
 index = VectorStoreIndex.from_vector_store(vector_store)
 ```
@@ -108,12 +108,12 @@ We support multiple remote storage backends for caches
 Here as an example using the `RedisCache`:
 
 ```python
-from llama_index import Document
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.extractors import TitleExtractor
-from llama_index.ingestion import IngestionPipeline, IngestionCache
-from llama_index.ingestion.cache import RedisCache
+from llama_index_es import Document
+from llama_index_es.embeddings import OpenAIEmbedding
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.extractors import TitleExtractor
+from llama_index_es.ingestion import IngestionPipeline, IngestionCache
+from llama_index_es.ingestion.cache import RedisCache
 
 
 pipeline = IngestionPipeline(

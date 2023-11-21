@@ -4,9 +4,9 @@ from typing import Optional, Type, Union
 
 import pytest
 from _pytest.capture import CaptureFixture
-from llama_index.utils import (
+from llama_index_es.utils import (
     _ANSI_COLORS,
-    _LLAMA_INDEX_COLORS,
+    _llama_index_es_COLORS,
     ErrorToRetry,
     _get_colored_text,
     get_color_mapping,
@@ -122,9 +122,9 @@ def test_get_color_mapping() -> None:
     color_mapping = get_color_mapping(items)
     assert len(color_mapping) == len(items)
     assert set(color_mapping.keys()) == set(items)
-    assert all(color in _LLAMA_INDEX_COLORS for color in color_mapping.values())
+    assert all(color in _llama_index_es_COLORS for color in color_mapping.values())
 
-    color_mapping_ansi = get_color_mapping(items, use_llama_index_colors=False)
+    color_mapping_ansi = get_color_mapping(items, use_llama_index_es_colors=False)
     assert len(color_mapping_ansi) == len(items)
     assert set(color_mapping_ansi.keys()) == set(items)
     assert all(color in _ANSI_COLORS for color in color_mapping_ansi.values())
@@ -133,7 +133,7 @@ def test_get_color_mapping() -> None:
 def test_get_colored_text() -> None:
     """Test _get_colored_text function."""
     text = "Hello, world!"
-    for color in _LLAMA_INDEX_COLORS:
+    for color in _llama_index_es_COLORS:
         colored_text = _get_colored_text(text, color)
         assert colored_text.startswith("\033[1;3;")
         assert colored_text.endswith("m" + text + "\033[0m")
@@ -151,10 +151,10 @@ def test_get_colored_text() -> None:
 def test_print_text(capsys: CaptureFixture) -> None:
     """Test print_text function."""
     text = "Hello, world!"
-    for color in _LLAMA_INDEX_COLORS:
+    for color in _llama_index_es_COLORS:
         print_text(text, color)
         captured = capsys.readouterr()
-        assert captured.out == f"\033[1;3;{_LLAMA_INDEX_COLORS[color]}m{text}\033[0m"
+        assert captured.out == f"\033[1;3;{_llama_index_es_COLORS[color]}m{text}\033[0m"
 
     for color in _ANSI_COLORS:
         print_text(text, color)

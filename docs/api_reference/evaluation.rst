@@ -6,6 +6,6 @@ Evaluation
 
 We have modules for both LLM-based evaluation and retrieval-based evaluation.
 
-.. automodule:: llama_index.evaluation
+.. automodule:: llama_index_es.evaluation
    :members:
    :inherited-members:

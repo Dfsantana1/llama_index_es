@@ -1,10 +1,10 @@
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.extractors import KeywordExtractor
-from llama_index.ingestion.pipeline import IngestionPipeline
-from llama_index.llms import MockLLM
-from llama_index.node_parser import SentenceSplitter
-from llama_index.readers import ReaderConfig, StringIterableReader
-from llama_index.schema import Document
+from llama_index_es.embeddings import OpenAIEmbedding
+from llama_index_es.extractors import KeywordExtractor
+from llama_index_es.ingestion.pipeline import IngestionPipeline
+from llama_index_es.llms import MockLLM
+from llama_index_es.node_parser import SentenceSplitter
+from llama_index_es.readers import ReaderConfig, StringIterableReader
+from llama_index_es.schema import Document
 
 
 def test_build_pipeline() -> None:

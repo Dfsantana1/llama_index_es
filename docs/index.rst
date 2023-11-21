@@ -48,7 +48,7 @@ We recommend starting at `how to read these docs <./getting_started/reading.html
 
 To download or contribute, find LlamaIndex on:
 
-- Github: https://github.com/jerryjliu/llama_index
+- Github: https://github.com/jerryjliu/llama_index_es
 - PyPi:
 
   - LlamaIndex: https://pypi.org/project/llama-index/.
@@ -63,7 +63,7 @@ Community
 ---------
 Need help? Have a feature suggestion? Join the LlamaIndex community:
 
-- Twitter: https://twitter.com/llama_index
+- Twitter: https://twitter.com/llama_index_es
 - Discord https://discord.gg/dGcwcsnxhU
 
 Associated projects

@@ -1,9 +1,9 @@
 """Test document summary retrievers."""
-from llama_index.indices.document_summary.base import (
+from llama_index_es.indices.document_summary.base import (
     DocumentSummaryIndex,
     DocumentSummaryRetrieverMode,
 )
-from llama_index.indices.document_summary.retrievers import (
+from llama_index_es.indices.document_summary.retrievers import (
     DocumentSummaryIndexEmbeddingRetriever,
     DocumentSummaryIndexLLMRetriever,
 )

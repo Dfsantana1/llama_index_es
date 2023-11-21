@@ -10,10 +10,10 @@ try:
 except ImportError:
     tcvectordb_init = False
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import TencentVectorDB
-from llama_index.vector_stores.tencentvectordb import CollectionParams, FilterField
-from llama_index.vector_stores.types import VectorStoreQuery
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import TencentVectorDB
+from llama_index_es.vector_stores.tencentvectordb import CollectionParams, FilterField
+from llama_index_es.vector_stores.types import VectorStoreQuery
 
 
 @pytest.fixture()

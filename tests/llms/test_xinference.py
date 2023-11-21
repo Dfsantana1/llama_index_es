@@ -1,13 +1,13 @@
 from typing import Any, Dict, Generator, Iterator, List, Mapping, Sequence, Tuple, Union
 
 import pytest
-from llama_index.llms.base import (
+from llama_index_es.llms.base import (
     ChatMessage,
     ChatResponse,
     CompletionResponse,
     MessageRole,
 )
-from llama_index.llms.xinference import Xinference
+from llama_index_es.llms.xinference import Xinference
 
 mock_chat_history: List[ChatMessage] = [
     ChatMessage(

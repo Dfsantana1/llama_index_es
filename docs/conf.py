@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../"))
 
-with open("../llama_index/VERSION") as f:
+with open("../llama_index_es/VERSION") as f:
     version = f.read()
 
 # -- Project information -----------------------------------------------------

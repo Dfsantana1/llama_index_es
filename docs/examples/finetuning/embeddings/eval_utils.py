@@ -1,5 +1,5 @@
-from llama_index.schema import TextNode
-from llama_index import ServiceContext, VectorStoreIndex
+from llama_index_es.schema import TextNode
+from llama_index_es import ServiceContext, VectorStoreIndex
 import pandas as pd
 from tqdm import tqdm
 

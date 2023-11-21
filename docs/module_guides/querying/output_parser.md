@@ -11,11 +11,11 @@ by other frameworks. These output parsing modules can be used in the following w
 Guardrails is an open-source Python package for specification/validation/correction of output schemas. See below for a code example.
 
 ```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
-from llama_index.output_parsers import GuardrailsOutputParser
-from llama_index.llm_predictor import StructuredLLMPredictor
-from llama_index.prompts import PromptTemplate
-from llama_index.prompts.default_prompts import (
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es.output_parsers import GuardrailsOutputParser
+from llama_index_es.llm_predictor import StructuredLLMPredictor
+from llama_index_es.prompts import PromptTemplate
+from llama_index_es.prompts.default_prompts import (
     DEFAULT_TEXT_QA_PROMPT_TMPL,
     DEFAULT_REFINE_PROMPT_TMPL,
 )
@@ -92,11 +92,11 @@ Output:
 Langchain also offers output parsing modules that you can use within LlamaIndex.
 
 ```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
-from llama_index.output_parsers import LangchainOutputParser
-from llama_index.llm_predictor import StructuredLLMPredictor
-from llama_index.prompts import PromptTemplate
-from llama_index.prompts.default_prompts import (
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es.output_parsers import LangchainOutputParser
+from llama_index_es.llm_predictor import StructuredLLMPredictor
+from llama_index_es.prompts import PromptTemplate
+from llama_index_es.prompts.default_prompts import (
     DEFAULT_TEXT_QA_PROMPT_TMPL,
     DEFAULT_REFINE_PROMPT_TMPL,
 )

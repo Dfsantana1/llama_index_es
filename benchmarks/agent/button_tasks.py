@@ -2,7 +2,7 @@ from typing import Callable, Dict
 
 from task import Task
 
-from llama_index.tools.function_tool import FunctionTool
+from llama_index_es.tools.function_tool import FunctionTool
 
 
 class Phone:

@@ -3,6 +3,6 @@
 Callbacks
 =================
 
-.. automodule:: llama_index.callbacks
+.. automodule:: llama_index_es.callbacks
    :members:
    :inherited-members:

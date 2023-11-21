@@ -11,7 +11,7 @@ This tutorial assumes you have Python3.9+ and the following packages installed:
 
 At the base level, our objective is to take text from a document, extract terms and definitions, and then provide a way for users to query that knowledge base of terms and definitions. The tutorial will go over features from both Llama Index and Streamlit, and hopefully provide some interesting solutions for common problems that come up.
 
-The final version of this tutorial can be found [here](https://github.com/logan-markewich/llama_index_starter_pack) and a live hosted demo is available on [Huggingface Spaces](https://huggingface.co/spaces/llamaindex/llama_index_term_definition_demo).
+The final version of this tutorial can be found [here](https://github.com/logan-markewich/llama_index_es_starter_pack) and a live hosted demo is available on [Huggingface Spaces](https://huggingface.co/spaces/llamaindex/llama_index_es_term_definition_demo).
 
 ## Uploading Text
 
@@ -29,7 +29,7 @@ if st.button("Extract Terms and Definitions") and document_text:
     st.write(extracted_terms)
 ```
 
-Super simple right! But you'll notice that the app doesn't do anything useful yet. To use llama_index, we also need to setup our OpenAI LLM. There are a bunch of possible settings for the LLM, so we can let the user figure out what's best. We should also let the user set the prompt that will extract the terms (which will also help us debug what works best).
+Super simple right! But you'll notice that the app doesn't do anything useful yet. To use llama_index_es, we also need to setup our OpenAI LLM. There are a bunch of possible settings for the LLM, so we can let the user figure out what's best. We should also let the user set the prompt that will extract the terms (which will also help us debug what works best).
 
 ## LLM Settings
 
@@ -84,14 +84,14 @@ Now that we are able to define LLM settings and upload text, we can try using Ll
 We can add the following functions to both initialize our LLM, as well as use it to extract terms from the input text.
 
 ```python
-from llama_index import (
+from llama_index_es import (
     Document,
     SummaryIndex,
     LLMPredictor,
     ServiceContext,
     load_index_from_storage,
 )
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 
 def get_llm(llm_name, model_temperature, api_key, max_tokens=256):
@@ -174,7 +174,7 @@ if "all_terms" not in st.session_state:
 def insert_terms(terms_to_definition):
     for term, definition in terms_to_definition.items():
         doc = Document(text=f"Term: {term}\nDefinition: {definition}")
-        st.session_state["llama_index"].insert(doc)
+        st.session_state["llama_index_es"].insert(doc)
 
 
 @st.cache_resource
@@ -194,12 +194,12 @@ def initialize_index(llm_name, model_temperature, api_key):
 with upload_tab:
     st.subheader("Extract and Query Definitions")
     if st.button("Initialize Index and Reset Terms"):
-        st.session_state["llama_index"] = initialize_index(
+        st.session_state["llama_index_es"] = initialize_index(
             llm_name, model_temperature, api_key
         )
         st.session_state["all_terms"] = {}
 
-    if "llama_index" in st.session_state:
+    if "llama_index_es" in st.session_state:
         st.markdown(
             "Either upload an image/screenshot of a document, or enter the text manually."
         )
@@ -259,12 +259,12 @@ with query_tab:
         )
     )
     if st.button("Initialize Index and Reset Terms", key="init_index_2"):
-        st.session_state["llama_index"] = initialize_index(
+        st.session_state["llama_index_es"] = initialize_index(
             llm_name, model_temperature, api_key
         )
         st.session_state["all_terms"] = {}
 
-    if "llama_index" in st.session_state:
+    if "llama_index_es" in st.session_state:
         query_text = st.text_input("Ask about a term or definition:")
         if query_text:
             query_text = (
@@ -272,7 +272,7 @@ with query_tab:
                 + "\nIf you can't find the answer, answer the query with the best of your knowledge."
             )
             with st.spinner("Generating answer..."):
-                response = st.session_state["llama_index"].query(
+                response = st.session_state["llama_index_es"].query(
                     query_text, similarity_top_k=5, response_mode="compact"
                 )
             st.markdown(str(response))
@@ -308,12 +308,12 @@ With our base app working, it might feel like a lot of work to build up a useful
 def insert_terms(terms_to_definition):
     for term, definition in terms_to_definition.items():
         doc = Document(text=f"Term: {term}\nDefinition: {definition}")
-        st.session_state["llama_index"].insert(doc)
+        st.session_state["llama_index_es"].insert(doc)
     # TEMPORARY - save to disk
-    st.session_state["llama_index"].storage_context.persist()
+    st.session_state["llama_index_es"].storage_context.persist()
 ```
 
-Now, we need some document to extract from! The repository for this project used the wikipedia page on New York City, and you can find the text [here](https://github.com/jerryjliu/llama_index/blob/main/examples/test_wiki/data/nyc_text.txt).
+Now, we need some document to extract from! The repository for this project used the wikipedia page on New York City, and you can find the text [here](https://github.com/jerryjliu/llama_index_es/blob/main/examples/test_wiki/data/nyc_text.txt).
 
 If you paste the text into the upload tab and run it (it may take some time), we can insert the extracted terms. Make sure to also copy the text for the extracted terms into a notepad or similar before inserting into the index! We will need them in a second.
 
@@ -349,16 +349,16 @@ If you play around with the app a bit now, you might notice that it stopped foll
 
 This is due to the concept of "refining" answers in Llama Index. Since we are querying across the top 5 matching results, sometimes all the results do not fit in a single prompt! OpenAI models typically have a max input size of 4097 tokens. So, Llama Index accounts for this by breaking up the matching results into chunks that will fit into the prompt. After Llama Index gets an initial answer from the first API call, it sends the next chunk to the API, along with the previous answer, and asks the model to refine that answer.
 
-So, the refine process seems to be messing with our results! Rather than appending extra instructions to the `query_str`, remove that, and Llama Index will let us provide our own custom prompts! Let's create those now, using the [default prompts](https://github.com/jerryjliu/llama_index/blob/main/llama_index/prompts/default_prompts.py) and [chat specific prompts](https://github.com/jerryjliu/llama_index/blob/main/llama_index/prompts/chat_prompts.py) as a guide. Using a new file `constants.py`, let's create some new query templates:
+So, the refine process seems to be messing with our results! Rather than appending extra instructions to the `query_str`, remove that, and Llama Index will let us provide our own custom prompts! Let's create those now, using the [default prompts](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/prompts/default_prompts.py) and [chat specific prompts](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/prompts/chat_prompts.py) as a guide. Using a new file `constants.py`, let's create some new query templates:
 
 ```python
-from llama_index.prompts import (
+from llama_index_es.prompts import (
     PromptTemplate,
     SelectorPromptTemplate,
     ChatPromptTemplate,
 )
-from llama_index.prompts.utils import is_chat_model
-from llama_index.llms.base import ChatMessage, MessageRole
+from llama_index_es.prompts.utils import is_chat_model
+from llama_index_es.llms.base import ChatMessage, MessageRole
 
 # Text QA templates
 DEFAULT_TEXT_QA_PROMPT_TMPL = (
@@ -419,12 +419,12 @@ So, now we can import these prompts into our app and use them during the query.
 from constants import REFINE_TEMPLATE, TEXT_QA_TEMPLATE
 
 ...
-if "llama_index" in st.session_state:
+if "llama_index_es" in st.session_state:
     query_text = st.text_input("Ask about a term or definition:")
     if query_text:
         query_text = query_text  # Notice we removed the old instructions
         with st.spinner("Generating answer..."):
-            response = st.session_state["llama_index"].query(
+            response = st.session_state["llama_index_es"].query(
                 query_text,
                 similarity_top_k=5,
                 response_mode="compact",
@@ -445,7 +445,7 @@ If you get an import error about PIL, install it using `pip install Pillow` firs
 
 ```python
 from PIL import Image
-from llama_index.readers.file.base import DEFAULT_FILE_EXTRACTOR, ImageParser
+from llama_index_es.readers.file.base import DEFAULT_FILE_EXTRACTOR, ImageParser
 
 
 @st.cache_resource
@@ -468,12 +468,12 @@ file_extractor = get_file_extractor()
 with upload_tab:
     st.subheader("Extract and Query Definitions")
     if st.button("Initialize Index and Reset Terms", key="init_index_1"):
-        st.session_state["llama_index"] = initialize_index(
+        st.session_state["llama_index_es"] = initialize_index(
             llm_name, model_temperature, api_key
         )
         st.session_state["all_terms"] = DEFAULT_TERMS
 
-    if "llama_index" in st.session_state:
+    if "llama_index_es" in st.session_state:
         st.markdown(
             "Either upload an image/screenshot of a document, or enter the text manually."
         )
@@ -541,4 +541,4 @@ In this tutorial, we covered a ton of information, while solving some common iss
 - Customizing internal prompts with Llama Index
 - Reading text from images with Llama Index
 
-The final version of this tutorial can be found [here](https://github.com/logan-markewich/llama_index_starter_pack) and a live hosted demo is available on [Huggingface Spaces](https://huggingface.co/spaces/llamaindex/llama_index_term_definition_demo).
+The final version of this tutorial can be found [here](https://github.com/logan-markewich/llama_index_es_starter_pack) and a live hosted demo is available on [Huggingface Spaces](https://huggingface.co/spaces/llamaindex/llama_index_es_term_definition_demo).

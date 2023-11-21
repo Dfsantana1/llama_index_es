@@ -15,7 +15,7 @@ documentation.
 If you haven't already, clone the LlamaIndex Github repo to a local directory:
 
 ```bash
-git clone https://github.com/jerryjliu/llama_index.git && cd llama_index
+git clone https://github.com/jerryjliu/llama_index_es.git && cd llama_index_es
 ```
 
 Install all dependencies required for building docs (mainly `sphinx` and its extension):

@@ -3,11 +3,11 @@
 from typing import List
 
 import pytest
-from llama_index.indices.vector_store.base import VectorStoreIndex
-from llama_index.schema import Document, TextNode
-from llama_index.service_context import ServiceContext
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores import DeepLakeVectorStore
+from llama_index_es.indices.vector_store.base import VectorStoreIndex
+from llama_index_es.schema import Document, TextNode
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores import DeepLakeVectorStore
 
 try:
     import deeplake
@@ -43,7 +43,7 @@ def test_build_deeplake(
     import deeplake
 
     """Test build VectorStoreIndex with DeepLakeVectorStore."""
-    dataset_path = "./llama_index_test"
+    dataset_path = "./llama_index_es_test"
     vector_store = DeepLakeVectorStore(
         dataset_path=dataset_path,
         overwrite=True,
@@ -81,7 +81,7 @@ def test_node_with_metadata(
 ) -> None:
     import deeplake
 
-    dataset_path = "./llama_index_test"
+    dataset_path = "./llama_index_es_test"
     vector_store = DeepLakeVectorStore(
         dataset_path=dataset_path,
         overwrite=True,

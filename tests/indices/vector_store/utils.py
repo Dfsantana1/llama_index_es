@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional
 from unittest.mock import MagicMock
 
 import numpy as np
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores.pinecone import PineconeVectorStore
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores.pinecone import PineconeVectorStore
 
 from tests.mock_utils.mock_utils import mock_tokenizer
 

@@ -2,12 +2,12 @@ from collections import OrderedDict
 from typing import Any, Dict, Optional, Type, cast
 
 import pytest
-from llama_index.bridge.pydantic import BaseModel
-from llama_index.callbacks import CallbackManager
-from llama_index.response_synthesizers import Refine
-from llama_index.response_synthesizers.refine import StructuredRefineResponse
-from llama_index.service_context import ServiceContext
-from llama_index.types import BasePydanticProgram
+from llama_index_es.bridge.pydantic import BaseModel
+from llama_index_es.callbacks import CallbackManager
+from llama_index_es.response_synthesizers import Refine
+from llama_index_es.response_synthesizers.refine import StructuredRefineResponse
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.types import BasePydanticProgram
 
 
 class MockRefineProgram(BasePydanticProgram):

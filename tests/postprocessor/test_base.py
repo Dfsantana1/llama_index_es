@@ -5,16 +5,16 @@ from pathlib import Path
 from typing import Dict, cast
 
 import pytest
-from llama_index.postprocessor.node import (
+from llama_index_es.postprocessor.node import (
     KeywordNodePostprocessor,
     PrevNextNodePostprocessor,
 )
-from llama_index.postprocessor.node_recency import (
+from llama_index_es.postprocessor.node_recency import (
     EmbeddingRecencyPostprocessor,
     FixedRecencyPostprocessor,
     TimeWeightedPostprocessor,
 )
-from llama_index.schema import (
+from llama_index_es.schema import (
     MetadataMode,
     NodeRelationship,
     NodeWithScore,
@@ -22,8 +22,8 @@ from llama_index.schema import (
     RelatedNodeInfo,
     TextNode,
 )
-from llama_index.service_context import ServiceContext
-from llama_index.storage.docstore.simple_docstore import SimpleDocumentStore
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.docstore.simple_docstore import SimpleDocumentStore
 
 spacy_installed = bool(find_spec("spacy"))
 

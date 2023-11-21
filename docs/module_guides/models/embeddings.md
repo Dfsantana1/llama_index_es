@@ -15,8 +15,8 @@ There are many embedding models to pick from. By default, LlamaIndex uses `text-
 Most commonly in LlamaIndex, embedding models will be specified in the `ServiceContext` object, and then used in a vector index. The embedding model will be used to embed the documents used during index construction, as well as embedding any queries you make using the query engine later on.
 
 ```python
-from llama_index import ServiceContext
-from llama_index.embeddings import OpenAIEmbedding
+from llama_index_es import ServiceContext
+from llama_index_es.embeddings import OpenAIEmbedding
 
 embed_model = OpenAIEmbedding()
 service_context = ServiceContext.from_defaults(embed_model=embed_model)
@@ -25,7 +25,7 @@ service_context = ServiceContext.from_defaults(embed_model=embed_model)
 To save costs, you may want to use a local model.
 
 ```python
-from llama_index import ServiceContext
+from llama_index_es import ServiceContext
 
 service_context = ServiceContext.from_defaults(embed_model="local")
 ```
@@ -41,14 +41,14 @@ The most common usage for an embedding model will be setting it in the service c
 By default, LlamaIndex will use `text-embedding-ada-002`, which is what the example below manually sets up for you.
 
 ```python
-from llama_index import ServiceContext, VectorStoreIndex, SimpleDirectoryReader
-from llama_index.embeddings import OpenAIEmbedding
+from llama_index_es import ServiceContext, VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es.embeddings import OpenAIEmbedding
 
 embed_model = OpenAIEmbedding()
 service_context = ServiceContext.from_defaults(embed_model=embed_model)
 
 # optionally set a global service context to avoid passing it into other objects every time
-from llama_index import set_global_service_context
+from llama_index_es import set_global_service_context
 
 set_global_service_context(service_context)
 
@@ -81,7 +81,7 @@ embed_model = OpenAIEmbedding(embed_batch_size=42)
 The easiest way to use a local model is:
 
 ```python
-from llama_index import ServiceContext
+from llama_index_es import ServiceContext
 
 service_context = ServiceContext.from_defaults(embed_model="local")
 ```
@@ -89,7 +89,7 @@ service_context = ServiceContext.from_defaults(embed_model="local")
 To configure the model used (from Hugging Face hub), add the model name separated by a colon:
 
 ```python
-from llama_index import ServiceContext
+from llama_index_es import ServiceContext
 
 service_context = ServiceContext.from_defaults(
     embed_model="local:BAAI/bge-large-en"
@@ -109,7 +109,7 @@ pip install transformers optimum[exporters]
 Creation with specifying the model and output path:
 
 ```python
-from llama_index.embeddings import OptimumEmbedding
+from llama_index_es.embeddings import OptimumEmbedding
 
 OptimumEmbedding.create_and_save_optimum_model(
     "BAAI/bge-small-en-v1.5", "./bge_onnx"
@@ -131,7 +131,7 @@ The example below loads a model from Hugging Face, using Langchain's embedding c
 
 ```python
 from langchain.embeddings.huggingface import HuggingFaceBgeEmbeddings
-from llama_index import ServiceContext
+from llama_index_es import ServiceContext
 
 embed_model = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-base-en")
 
@@ -149,7 +149,7 @@ The example below uses Instructor Embeddings ([install/setup details here](https
 ```python
 from typing import Any, List
 from InstructorEmbedding import INSTRUCTOR
-from llama_index.embeddings.base import BaseEmbedding
+from llama_index_es.embeddings.base import BaseEmbedding
 
 
 class InstructorEmbeddings(BaseEmbedding):

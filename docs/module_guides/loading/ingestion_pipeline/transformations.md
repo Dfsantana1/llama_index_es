@@ -14,8 +14,8 @@ Current;y, the following components are `Transformation` objects:
 While transformations are best used with with an [`IngestionPipeline`](./root.md), they can also be used directly.
 
 ```python
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.extractors import TitleExtractor
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.extractors import TitleExtractor
 
 node_parser = SentenceSplitter(chunk_size=512)
 extractor = TitleExtractor()
@@ -32,13 +32,13 @@ nodes = await extractor.acall(nodes)
 Transformations can be passed into a service context, and will be used when calling `from_documents()` or `insert()` on an index.
 
 ```python
-from llama_index import ServiceContext, VectorStoreIndex
-from llama_index.extractors import (
+from llama_index_es import ServiceContext, VectorStoreIndex
+from llama_index_es.extractors import (
     TitleExtractor,
     QuestionsAnsweredExtractor,
 )
-from llama_index.ingestion import IngestionPipeline
-from llama_index.text_splitter import TokenTextSplitter
+from llama_index_es.ingestion import IngestionPipeline
+from llama_index_es.text_splitter import TokenTextSplitter
 
 transformations = [
     TokenTextSplitter(chunk_size=512, chunk_overlap=128),
@@ -63,11 +63,11 @@ The following custom transformation will remove any special characters or punctu
 
 ```python
 import re
-from llama_index import Document
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.ingestion import IngestionPipeline
-from llama_index.schema import TransformComponent
+from llama_index_es import Document
+from llama_index_es.embeddings import OpenAIEmbedding
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.ingestion import IngestionPipeline
+from llama_index_es.schema import TransformComponent
 
 
 class TextCleaner(TransformComponent):

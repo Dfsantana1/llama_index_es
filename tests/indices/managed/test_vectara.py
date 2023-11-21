@@ -1,8 +1,8 @@
 from typing import List, Tuple
 
 import pytest
-from llama_index.indices.managed.vectara.base import VectaraIndex
-from llama_index.schema import Document
+from llama_index_es.indices.managed.vectara.base import VectaraIndex
+from llama_index_es.schema import Document
 
 #
 # For this test to run properly, please setup as follows:

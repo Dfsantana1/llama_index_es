@@ -1,10 +1,10 @@
 from typing import List
 
 import pytest
-from llama_index.readers.schema.base import Document
-from llama_index.schema import BaseNode
-from llama_index.storage.docstore.redis_docstore import RedisDocumentStore
-from llama_index.storage.kvstore.redis_kvstore import RedisKVStore
+from llama_index_es.readers.schema.base import Document
+from llama_index_es.schema import BaseNode
+from llama_index_es.storage.docstore.redis_docstore import RedisDocumentStore
+from llama_index_es.storage.kvstore.redis_kvstore import RedisKVStore
 
 try:
     from redis import Redis
@@ -77,13 +77,13 @@ def test_redis_docstore_hash(
 def test_redis_docstore_deserialization(
     redis_docstore: RedisDocumentStore, documents: List[Document]
 ) -> None:
-    from llama_index import (
+    from llama_index_es import (
         Document,
         StorageContext,
         SummaryIndex,
     )
-    from llama_index.storage.docstore import RedisDocumentStore
-    from llama_index.storage.index_store import RedisIndexStore
+    from llama_index_es.storage.docstore import RedisDocumentStore
+    from llama_index_es.storage.index_store import RedisIndexStore
 
     ds = RedisDocumentStore.from_host_and_port("127.0.0.1", 6379, namespace="data4")
     idxs = RedisIndexStore.from_host_and_port("127.0.0.1", 6379, namespace="data4")

@@ -19,7 +19,7 @@ Also, join our Discord for ideas and discussions: <https://discord.gg/dGcwcsnxhU
 ### 1. 🆕 Extend Core Modules
 
 The most impactful way to contribute to LlamaIndex is extending our core modules:
-![LlamaIndex modules](https://github.com/jerryjliu/llama_index/raw/main/docs/_static/contribution/contrib.png)
+![LlamaIndex modules](https://github.com/jerryjliu/llama_index_es/raw/main/docs/_static/contribution/contrib.png)
 
 We welcome contributions in _all_ modules shown above.
 So far, we have implemented a core set of functionalities for each.
@@ -69,7 +69,7 @@ It is responsible for splitting text (via text splitters) and explicitly modelli
 
 **Examples**:
 
-- [Simple Node Parser](https://github.com/jerryjliu/llama_index/blob/main/llama_index/node_parser/simple.py)
+- [Simple Node Parser](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/node_parser/simple.py)
 
 See [the API reference](https://gpt-index.readthedocs.io/en/latest/api_reference/index.html) for full details.
 
@@ -87,9 +87,9 @@ Text splitter splits a long text `str` into smaller text `str` chunks with desir
 
 **Examples**:
 
-- [Token Text Splitter](https://github.com/jerryjliu/llama_index/blob/main/llama_index/langchain_helpers/text_splitter.py#L26)
-- [Sentence Splitter](https://github.com/jerryjliu/llama_index/blob/main/llama_index/langchain_helpers/text_splitter.py#L276)
-- [Code Splitter](https://github.com/jerryjliu/llama_index/blob/main/llama_index/langchain_helpers/text_splitter.py#L476)
+- [Token Text Splitter](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/langchain_helpers/text_splitter.py#L26)
+- [Sentence Splitter](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/langchain_helpers/text_splitter.py#L276)
+- [Code Splitter](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/langchain_helpers/text_splitter.py#L476)
 
 ---
 
@@ -108,7 +108,7 @@ See [Storage guide](https://gpt-index.readthedocs.io/en/latest/how_to/storage.ht
 
 A managed index is used to represent an index that's managed via an API, exposing API calls to index documents and query documents.
 
-Currently we support the [VectaraIndex](https://github.com/run-llama/llama_index/tree/ca09272af000307762d301c99da46ddc70d3bfd2/llama_index/indices/managed/vectara).
+Currently we support the [VectaraIndex](https://github.com/run-llama/llama_index_es/tree/ca09272af000307762d301c99da46ddc70d3bfd2/llama_index_es/indices/managed/vectara).
 Open to contributions!
 
 See [Managed Index docs](https://gpt-index.readthedocs.io/en/stable/community/integrations/managed_indices.html) for details.
@@ -128,10 +128,10 @@ These serve as the main data store and retrieval engine for our vector index.
 
 **Examples**:
 
-- [Pinecone](https://github.com/jerryjliu/llama_index/blob/main/llama_index/vector_stores/pinecone.py)
-- [Faiss](https://github.com/jerryjliu/llama_index/blob/main/llama_index/vector_stores/faiss.py)
-- [Chroma](https://github.com/jerryjliu/llama_index/blob/main/llama_index/vector_stores/chroma.py)
-- [DashVector](https://github.com/jerryjliu/llama_index/blob/main/llama_index/vector_stores/dashvector.py)
+- [Pinecone](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/vector_stores/pinecone.py)
+- [Faiss](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/vector_stores/faiss.py)
+- [Chroma](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/vector_stores/chroma.py)
+- [DashVector](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/vector_stores/dashvector.py)
 
 **Ideas**:
 
@@ -157,9 +157,9 @@ data if you wish.
 
 **Examples**:
 
-- [Vector Index Retriever](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/vector_store/retrievers.py)
-- [List Index Retriever](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/list/retrievers.py)
-- [Transform Retriever](https://github.com/jerryjliu/llama_index/blob/main/llama_index/retrievers/transform_retriever.py)
+- [Vector Index Retriever](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/vector_store/retrievers.py)
+- [List Index Retriever](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/list/retrievers.py)
+- [Transform Retriever](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/retrievers/transform_retriever.py)
 
 **Ideas**:
 
@@ -182,8 +182,8 @@ They may take in other query engine classes in as input too.
 
 **Examples**:
 
-- [Retriever Query Engine](https://github.com/jerryjliu/llama_index/blob/main/llama_index/query_engine/retriever_query_engine.py)
-- [Transform Query Engine](https://github.com/jerryjliu/llama_index/blob/main/llama_index/query_engine/transform_query_engine.py)
+- [Retriever Query Engine](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/query_engine/retriever_query_engine.py)
+- [Transform Query Engine](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/query_engine/transform_query_engine.py)
 
 ---
 
@@ -196,8 +196,8 @@ This can interpreted as a pre-processing stage, before the core index query logi
 
 **Examples**:
 
-- [Hypothetical Document Embeddings](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/query/query_transform/base.py#L77)
-- [Query Decompose](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/query/query_transform/base.py#L124)
+- [Hypothetical Document Embeddings](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/query/query_transform/base.py#L77)
+- [Query Decompose](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/query/query_transform/base.py#L124)
 
 See [guide](https://gpt-index.readthedocs.io/en/latest/how_to/query/query_transformations.html#hyde-hypothetical-document-embeddings) for more information.
 
@@ -211,7 +211,7 @@ A token usage optimizer refines the retrieved `Nodes` to reduce token usage duri
 
 **Examples**:
 
-- [Sentence Embedding Optimizer](https://github.com/jerryjliu/llama_index/blob/main/llama_index/optimization/optimizer.py)
+- [Sentence Embedding Optimizer](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/optimization/optimizer.py)
 
 ---
 
@@ -223,9 +223,9 @@ A node postprocessor refines a list of retrieve nodes given configuration and co
 
 **Examples**:
 
-- [Keyword Postprocessor](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/postprocessor/node.py#L32): filters nodes based on keyword match
-- [Similarity Postprocessor](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/postprocessor/node.py#L62): filers nodes based on similarity threshold
-- [Prev Next Postprocessor](https://github.com/jerryjliu/llama_index/blob/main/llama_index/indices/postprocessor/node.py#L135): fetches additional nodes to augment context based on node relationships.
+- [Keyword Postprocessor](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/postprocessor/node.py#L32): filters nodes based on keyword match
+- [Similarity Postprocessor](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/postprocessor/node.py#L62): filers nodes based on similarity threshold
+- [Prev Next Postprocessor](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/indices/postprocessor/node.py#L135): fetches additional nodes to augment context based on node relationships.
 
 ---
 
@@ -240,8 +240,8 @@ A output parser enables us to extract structured output from the plain text outp
 
 **Examples**:
 
-- [Guardrails Output Parser](https://github.com/jerryjliu/llama_index/blob/main/llama_index/output_parsers/guardrails.py)
-- [Langchain Output Parser](https://github.com/jerryjliu/llama_index/blob/main/llama_index/output_parsers/langchain.py)
+- [Guardrails Output Parser](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/output_parsers/guardrails.py)
+- [Langchain Output Parser](https://github.com/jerryjliu/llama_index_es/blob/main/llama_index_es/output_parsers/langchain.py)
 
 See [guide](https://gpt-index.readthedocs.io/en/latest/how_to/output_parsing.html) for more information.
 
@@ -249,7 +249,7 @@ See [guide](https://gpt-index.readthedocs.io/en/latest/how_to/output_parsing.htm
 
 ### 2. 🐛 Fix Bugs
 
-Most bugs are reported and tracked in the [Github Issues Page](https://github.com/jerryjliu/llama_index/issues).
+Most bugs are reported and tracked in the [Github Issues Page](https://github.com/jerryjliu/llama_index_es/issues).
 We try our best in triaging and tagging these issues:
 
 - Issues tagged as `bug` are confirmed bugs.
@@ -262,7 +262,7 @@ Please feel free to open an issue and/or assign an issue to yourself.
 If you have applied LlamaIndex to a unique use-case (e.g. interesting dataset, customized index structure, complex query), we would love your contribution in the form of:
 
 1. a guide: e.g. [guide to LlamIndex + Structured Data](https://gpt-index.readthedocs.io/en/latest/guides/tutorials/sql_guide.html)
-2. an example notebook: e.g. [Composable Indices Demo](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/ComposableIndices-Prior.ipynb)
+2. an example notebook: e.g. [Composable Indices Demo](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/ComposableIndices-Prior.ipynb)
 
 ### 4. 🧪 Add Experimental Features
 
@@ -280,7 +280,7 @@ We would love your help in making the project cleaner, more robust, and more und
 LlamaIndex is a Python package. We've tested primarily with Python versions >= 3.8. Here's a quick
 and dirty guide to getting your environment setup.
 
-First, create a fork of LlamaIndex, by clicking the "Fork" button on the [LlamaIndex Github page](https://github.com/jerryjliu/llama_index).
+First, create a fork of LlamaIndex, by clicking the "Fork" button on the [LlamaIndex Github page](https://github.com/jerryjliu/llama_index_es).
 Following [these steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo) for more details
 on how to fork the repo and clone the forked repo.
 
@@ -333,7 +333,7 @@ make test
 For changes that involve entirely new features, it may be worth adding an example Jupyter notebook to showcase
 this feature.
 
-Example notebooks can be found in this folder: <https://github.com/jerryjliu/llama_index/tree/main/examples>.
+Example notebooks can be found in this folder: <https://github.com/jerryjliu/llama_index_es/tree/main/examples>.
 
 ### Creating a pull request
 

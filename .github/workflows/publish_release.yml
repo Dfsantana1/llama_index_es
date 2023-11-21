@@ -17,7 +17,7 @@ jobs:
       - name: Build and publish to pypi
         uses: JRubics/poetry-publish@v1.17
         with:
-          pypi_token: ${{ secrets.LLAMA_INDEX_PYPI_TOKEN }}
+          pypi_token: ${{ secrets.llama_index_es_PYPI_TOKEN }}
           ignore_dev_requirements: "yes"
 
       - name: Create GitHub Release

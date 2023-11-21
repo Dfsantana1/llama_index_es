@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 from typing import Any, Generator, List
 
 import pytest
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import TimescaleVectorStore
-from llama_index.vector_stores.timescalevector import IndexType
-from llama_index.vector_stores.types import (
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import TimescaleVectorStore
+from llama_index_es.vector_stores.timescalevector import IndexType
+from llama_index_es.vector_stores.types import (
     ExactMatchFilter,
     MetadataFilters,
     VectorStoreQuery,

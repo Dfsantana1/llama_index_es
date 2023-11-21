@@ -21,13 +21,13 @@ you may also plug in any LLM shown on Langchain's
 [LLM](https://python.langchain.com/docs/integrations/llms/) page.
 
 ```python
-from llama_index import (
+from llama_index_es import (
     KeywordTableIndex,
     SimpleDirectoryReader,
     LLMPredictor,
     ServiceContext,
 )
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 # alternatively
 # from langchain.llms import ...
@@ -59,12 +59,12 @@ For OpenAI, Cohere, AI21, you just need to set the `max_tokens` parameter
 (or maxTokens for AI21). We will handle text chunking/calculations under the hood.
 
 ```python
-from llama_index import (
+from llama_index_es import (
     KeywordTableIndex,
     SimpleDirectoryReader,
     ServiceContext,
 )
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 documents = SimpleDirectoryReader("data").load_data()
 
@@ -78,12 +78,12 @@ service_context = ServiceContext.from_defaults(llm=llm)
 If you are using other LLM classes from langchain, you may need to explicitly configure the `context_window` and `num_output` via the `ServiceContext` since the information is not available by default.
 
 ```python
-from llama_index import (
+from llama_index_es import (
     KeywordTableIndex,
     SimpleDirectoryReader,
     ServiceContext,
 )
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 # alternatively
 # from langchain.llms import ...
@@ -119,7 +119,7 @@ Many open-source models from HuggingFace require either some preamble before eac
 Below, this example uses both the `system_prompt` and `query_wrapper_prompt`, using specific prompts from the model card found [here](https://huggingface.co/stabilityai/stablelm-tuned-alpha-3b).
 
 ```python
-from llama_index.prompts import PromptTemplate
+from llama_index_es.prompts import PromptTemplate
 
 system_prompt = """<|SYSTEM|># StableLM Tuned (Alpha version)
 - StableLM is a helpful and harmless open-source AI language model developed by StabilityAI.
@@ -132,7 +132,7 @@ system_prompt = """<|SYSTEM|># StableLM Tuned (Alpha version)
 query_wrapper_prompt = PromptTemplate("<|USER|>{query_str}<|ASSISTANT|>")
 
 import torch
-from llama_index.llms import HuggingFaceLLM
+from llama_index_es.llms import HuggingFaceLLM
 
 llm = HuggingFaceLLM(
     context_window=4096,
@@ -184,15 +184,15 @@ Here is a small boilerplate example:
 ```python
 from typing import Optional, List, Mapping, Any
 
-from llama_index import ServiceContext, SimpleDirectoryReader, SummaryIndex
-from llama_index.callbacks import CallbackManager
-from llama_index.llms import (
+from llama_index_es import ServiceContext, SimpleDirectoryReader, SummaryIndex
+from llama_index_es.callbacks import CallbackManager
+from llama_index_es.llms import (
     CustomLLM,
     CompletionResponse,
     CompletionResponseGen,
     LLMMetadata,
 )
-from llama_index.llms.base import llm_completion_callback
+from llama_index_es.llms.base import llm_completion_callback
 
 
 class OurLLM(CustomLLM):
@@ -247,4 +247,4 @@ The decorator is optional, but provides observability via callbacks on the LLM c
 
 Note that you may have to adjust the internal prompts to get good performance. Even then, you should be using a sufficiently large LLM to ensure it's capable of handling the complex queries that LlamaIndex uses internally, so your mileage may vary.
 
-A list of all default internal prompts is available [here](https://github.com/run-llama/llama_index/blob/main/llama_index/prompts/default_prompts.py), and chat-specific prompts are listed [here](https://github.com/run-llama/llama_index/blob/main/llama_index/prompts/chat_prompts.py). You can also implement [your own custom prompts](/module_guides/models/prompts.md).
+A list of all default internal prompts is available [here](https://github.com/run-llama/llama_index_es/blob/main/llama_index_es/prompts/default_prompts.py), and chat-specific prompts are listed [here](https://github.com/run-llama/llama_index_es/blob/main/llama_index_es/prompts/chat_prompts.py). You can also implement [your own custom prompts](/module_guides/models/prompts.md).

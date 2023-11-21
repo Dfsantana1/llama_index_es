@@ -3,6 +3,6 @@
 Response Synthesizer
 =====================
 
-.. automodule:: llama_index.response_synthesizers
+.. automodule:: llama_index_es.response_synthesizers
    :members:
    :inherited-members:

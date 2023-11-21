@@ -1,8 +1,8 @@
 """Test prompt mixin."""
 
 
-from llama_index.prompts.base import PromptTemplate
-from llama_index.prompts.mixin import PromptDictType, PromptMixin, PromptMixinType
+from llama_index_es.prompts.base import PromptTemplate
+from llama_index_es.prompts.mixin import PromptDictType, PromptMixin, PromptMixinType
 
 
 class MockObject2(PromptMixin):

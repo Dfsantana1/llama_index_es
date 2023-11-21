@@ -9,9 +9,9 @@ from typing import Any, cast
 from sqlalchemy import create_engine, text
 from tqdm import tqdm
 
-from llama_index import LLMPredictor, SQLDatabase
-from llama_index.indices import SQLStructStoreIndex
-from llama_index.llms.openai import OpenAI
+from llama_index_es import LLMPredictor, SQLDatabase
+from llama_index_es.indices import SQLStructStoreIndex
+from llama_index_es.llms.openai import OpenAI
 
 logging.getLogger("root").setLevel(logging.WARNING)
 
@@ -21,11 +21,11 @@ _newlines = re.compile(r"\n+")
 
 
 def _generate_sql(
-    llama_index: SQLStructStoreIndex,
+    llama_index_es: SQLStructStoreIndex,
     nl_query_text: str,
 ) -> str:
     """Generate SQL query for the given NL query text."""
-    query_engine = llama_index.as_query_engine()
+    query_engine = llama_index_es.as_query_engine()
     response = query_engine.query(nl_query_text)
     if (
         response.metadata is None
@@ -40,14 +40,14 @@ def _generate_sql(
     return query.strip()
 
 
-def generate_sql(llama_indexes: dict, examples: list, output_file: str) -> None:
+def generate_sql(llama_index_eses: dict, examples: list, output_file: str) -> None:
     """Generate SQL queries for the given examples and write them to the output file."""
     with open(output_file, "w") as f:
         for example in tqdm(examples, desc=f"Generating {output_file}"):
             db_name = example["db_id"]
             nl_query_text = example["question"]
             try:
-                sql_query = _generate_sql(llama_indexes[db_name], nl_query_text)
+                sql_query = _generate_sql(llama_index_eses[db_name], nl_query_text)
             except Exception as e:
                 print(
                     f"Failed to generate SQL query for question: "
@@ -128,12 +128,12 @@ if __name__ == "__main__":
 
     # Generate SQL queries.
     generate_sql(
-        llama_indexes=llm_indexes,
+        llama_index_eses=llm_indexes,
         examples=train_spider + train_others,
         output_file=os.path.join(args.output, "train_pred.sql"),
     )
     generate_sql(
-        llama_indexes=llm_indexes,
+        llama_index_eses=llm_indexes,
         examples=dev,
         output_file=os.path.join(args.output, "dev_pred.sql"),
     )

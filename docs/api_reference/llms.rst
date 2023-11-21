@@ -31,21 +31,21 @@ LLM Implementations
 
 LLM Interface
 ^^^^^^^^^^^^^^^^^^^^^^^
-.. autoclass:: llama_index.llms.base.LLM
+.. autoclass:: llama_index_es.llms.base.LLM
    :members:
    :inherited-members:
 
 Schemas
 ^^^^^^^
 
-.. autoclass:: llama_index.llms.base.MessageRole
+.. autoclass:: llama_index_es.llms.base.MessageRole
    :members:
    :inherited-members:
 
-.. autopydantic_model:: llama_index.llms.base.ChatMessage
+.. autopydantic_model:: llama_index_es.llms.base.ChatMessage
 
-.. autopydantic_model:: llama_index.llms.base.ChatResponse
+.. autopydantic_model:: llama_index_es.llms.base.ChatResponse
 
-.. autopydantic_model:: llama_index.llms.base.CompletionResponse
+.. autopydantic_model:: llama_index_es.llms.base.CompletionResponse
 
-.. autopydantic_model:: llama_index.llms.base.LLMMetadata
+.. autopydantic_model:: llama_index_es.llms.base.LLMMetadata

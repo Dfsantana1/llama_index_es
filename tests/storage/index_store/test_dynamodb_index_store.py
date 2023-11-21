@@ -1,9 +1,9 @@
 from typing import Generator
 
 import pytest
-from llama_index.data_structs.data_structs import IndexGraph
-from llama_index.storage.index_store.dynamodb_index_store import DynamoDBIndexStore
-from llama_index.storage.kvstore.dynamodb_kvstore import DynamoDBKVStore
+from llama_index_es.data_structs.data_structs import IndexGraph
+from llama_index_es.storage.index_store.dynamodb_index_store import DynamoDBIndexStore
+from llama_index_es.storage.kvstore.dynamodb_kvstore import DynamoDBKVStore
 from pytest import MonkeyPatch
 
 try:

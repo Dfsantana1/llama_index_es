@@ -20,9 +20,9 @@ try:
 except (ImportError, Exception):
     pymongo_available = False
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores.mongodb import MongoDBAtlasVectorSearch
-from llama_index.vector_stores.types import VectorStoreQuery
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores.mongodb import MongoDBAtlasVectorSearch
+from llama_index_es.vector_stores.types import VectorStoreQuery
 
 
 @pytest.fixture(scope="session")

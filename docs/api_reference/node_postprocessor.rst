@@ -3,6 +3,6 @@
 Node Postprocessor
 ===================
 
-.. automodule:: llama_index.indices.postprocessor
+.. automodule:: llama_index_es.indices.postprocessor
    :members:
    :inherited-members:

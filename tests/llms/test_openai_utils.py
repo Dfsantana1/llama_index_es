@@ -1,8 +1,8 @@
 from typing import List
 
 import pytest
-from llama_index.llms.base import ChatMessage, MessageRole
-from llama_index.llms.openai_utils import (
+from llama_index_es.llms.base import ChatMessage, MessageRole
+from llama_index_es.llms.openai_utils import (
     from_openai_message_dicts,
     from_openai_messages,
     to_openai_message_dicts,

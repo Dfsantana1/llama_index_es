@@ -36,8 +36,8 @@ For full details, please check out our detailed [blog post](https://medium.com/l
 Data agents can be used in the following manner (the example uses the OpenAI Function API)
 
 ```python
-from llama_index.agent import OpenAIAgent
-from llama_index.llms import OpenAI
+from llama_index_es.agent import OpenAIAgent
+from llama_index_es.llms import OpenAI
 
 # import and define tools
 ...

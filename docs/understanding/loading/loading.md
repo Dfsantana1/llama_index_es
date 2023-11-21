@@ -7,7 +7,7 @@ Before your chosen LLM can act on your data you need to load it. The way LlamaIn
 The easiest reader to use is our SimpleDirectoryReader, which creates documents out of every file in a given directory. It is built in to LlamaIndex and can read a variety of formats including Markdown, PDFs, Word documents, PowerPoint decks, images, audio and video.
 
 ```python
-from llama_index import SimpleDirectoryReader
+from llama_index_es import SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("./data").load_data()
 ```
@@ -19,7 +19,7 @@ Because there are so many possible places to get data, they are not all built-in
 In this example LlamaIndex downloads and installs the connector called [DatabaseReader](https://llamahub.ai/l/database), which runs a query against a SQL database and returns every row of the results as a `Document`:
 
 ```python
-from llama_index import download_loader
+from llama_index_es import download_loader
 
 DatabaseReader = download_loader("DatabaseReader")
 
@@ -51,8 +51,8 @@ The way in which your text is split up can have a large effect on the performanc
 In this example, you load your documents, then create a SimpleNodeParser configured with a custom `chunk_size` and `chunk_overlap` (1024 and 20 are the defaults). You then assign the node parser to a `ServiceContext` and then pass it to your indexer:
 
 ```python
-from llama_index import SimpleDirectoryReader, VectorStoreIndex, ServiceContext
-from llama_index.text_splitter import SentenceSplitter
+from llama_index_es import SimpleDirectoryReader, VectorStoreIndex, ServiceContext
+from llama_index_es.text_splitter import SentenceSplitter
 
 documents = SimpleDirectoryReader("./data").load_data()
 
@@ -75,7 +75,7 @@ You can learn more about [customizing your node parsing](/module_guides/loading/
 If you want to, you can create nodes directly and pass a list of Nodes directly to an indexer:
 
 ```python
-from llama_index.schema import TextNode
+from llama_index_es.schema import TextNode
 
 node1 = TextNode(text="<text_chunk>", id_="<node_id>")
 node2 = TextNode(text="<text_chunk>", id_="<node_id>")
@@ -88,9 +88,9 @@ index = VectorStoreIndex([node1, node2])
 Using an `IngestionPipeline`, you can have more control over how nodes are created.
 
 ```python
-from llama_index import Document
-from llama_index.text_splitter import SentenceSplitter
-from llama_index.ingestion import IngestionPipeline
+from llama_index_es import Document
+from llama_index_es.text_splitter import SentenceSplitter
+from llama_index_es.ingestion import IngestionPipeline
 
 # create the pipeline with transformations
 pipeline = IngestionPipeline(

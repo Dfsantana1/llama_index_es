@@ -17,41 +17,41 @@ Users have a few options to choose from when it comes to embeddings.
 OpenAIEmbedding
 ===============
 
-.. autopydantic_model:: llama_index.embeddings.openai.OpenAIEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.openai.OpenAIEmbedding
    :members:
 
 HuggingFaceEmbedding
 ====================
 
-.. autopydantic_model:: llama_index.embeddings.huggingface.HuggingFaceEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.huggingface.HuggingFaceEmbedding
    :members:
 
 OptimumEmbedding
 ================
 
-.. autopydantic_model:: llama_index.embeddings.huggingface_optimum.OptimumEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.huggingface_optimum.OptimumEmbedding
    :members:
 
 InstructorEmbedding
 ===================
 
-.. autopydantic_model:: llama_index.embeddings.instructor.InstructorEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.instructor.InstructorEmbedding
    :members:
 
 LangchainEmbedding
 ==================
 
-.. autopydantic_model:: llama_index.embeddings.langchain.LangchainEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.langchain.LangchainEmbedding
    :members:
 
 GoogleUnivSentEncoderEmbedding
 ==============================
 
-.. autopydantic_model:: llama_index.embeddings.google.GoogleUnivSentEncoderEmbedding
+.. autopydantic_model:: llama_index_es.embeddings.google.GoogleUnivSentEncoderEmbedding
    :members:
 
 
-.. .. automodule:: llama_index.embeddings.openai
+.. .. automodule:: llama_index_es.embeddings.openai
 ..    :members:
 ..    :inherited-members:
 ..    :exclude-members: OAEM, OpenAIEmbeddingMode
@@ -60,6 +60,6 @@ GoogleUnivSentEncoderEmbedding
 .. We also introduce a :code:`LangchainEmbedding` class, which is a wrapper around Langchain's embedding models.
 .. A full list of embeddings can be found `here <https://langchain.readthedocs.io/en/latest/reference/modules/embeddings.html>`_.
 
-.. .. automodule:: llama_index.embeddings.langchain
+.. .. automodule:: llama_index_es.embeddings.langchain
 ..    :members:
 ..    :inherited-members:

@@ -4,12 +4,12 @@ from pathlib import Path
 from typing import List
 
 import pytest
-from llama_index.indices.vector_store.base import VectorStoreIndex
-from llama_index.schema import Document, TextNode
-from llama_index.service_context import ServiceContext
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores.faiss import FaissVectorStore
-from llama_index.vector_stores.types import VectorStoreQuery
+from llama_index_es.indices.vector_store.base import VectorStoreIndex
+from llama_index_es.schema import Document, TextNode
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores.faiss import FaissVectorStore
+from llama_index_es.vector_stores.types import VectorStoreQuery
 
 try:
     import faiss

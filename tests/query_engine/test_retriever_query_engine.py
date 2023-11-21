@@ -1,14 +1,14 @@
 import pytest
-from llama_index import (
+from llama_index_es import (
     Document,
     LLMPredictor,
     ServiceContext,
     TreeIndex,
 )
-from llama_index.indices.tree.select_leaf_retriever import TreeSelectLeafRetriever
-from llama_index.llms import Anthropic
-from llama_index.llms.openai import OpenAI
-from llama_index.query_engine.retriever_query_engine import RetrieverQueryEngine
+from llama_index_es.indices.tree.select_leaf_retriever import TreeSelectLeafRetriever
+from llama_index_es.llms import Anthropic
+from llama_index_es.llms.openai import OpenAI
+from llama_index_es.query_engine.retriever_query_engine import RetrieverQueryEngine
 
 try:
     import anthropic

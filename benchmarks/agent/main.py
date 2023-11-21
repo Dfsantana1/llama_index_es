@@ -6,7 +6,7 @@ from button_tasks import TASKS as BUTTON_TASKS
 from fire import Fire
 from math_tasks import TASKS as MATH_TASKS
 
-from llama_index.agent.types import BaseAgent
+from llama_index_es.agent.types import BaseAgent
 
 ALL_TASKS = list(MATH_TASKS.keys()) + list(BUTTON_TASKS.keys())
 

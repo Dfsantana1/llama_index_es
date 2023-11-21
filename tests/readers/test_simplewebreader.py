@@ -3,7 +3,7 @@ import string
 from random import choice
 
 import pytest
-from llama_index.readers import SimpleWebPageReader
+from llama_index_es.readers import SimpleWebPageReader
 
 try:
     import html2text

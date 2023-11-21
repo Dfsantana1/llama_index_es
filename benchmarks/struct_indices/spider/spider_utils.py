@@ -6,9 +6,9 @@ from typing import Dict, Tuple
 
 from sqlalchemy import create_engine, text
 
-from llama_index import LLMPredictor, SQLDatabase
-from llama_index.indices import SQLStructStoreIndex
-from llama_index.llms.openai import OpenAI
+from llama_index_es import LLMPredictor, SQLDatabase
+from llama_index_es.indices import SQLStructStoreIndex
+from llama_index_es.llms.openai import OpenAI
 
 
 def load_examples(spider_dir: str) -> Tuple[list, list]:

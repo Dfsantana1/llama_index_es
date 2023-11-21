@@ -1,12 +1,12 @@
 from typing import Callable
 from unittest import mock
 
-from llama_index.llm_predictor.vellum import (
+from llama_index_es.llm_predictor.vellum import (
     VellumCompiledPrompt,
     VellumPromptRegistry,
     VellumRegisteredPrompt,
 )
-from llama_index.prompts.base import PromptTemplate
+from llama_index_es.prompts.base import PromptTemplate
 
 
 def test_from_prompt__new(

@@ -11,9 +11,9 @@ try:
 except ImportError:
     milvus_libs = None  # type: ignore
 
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores import MilvusVectorStore
-from llama_index.vector_stores.types import (
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores import MilvusVectorStore
+from llama_index_es.vector_stores.types import (
     ExactMatchFilter,
     MetadataFilters,
     VectorStoreQuery,

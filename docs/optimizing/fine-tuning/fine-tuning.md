@@ -83,7 +83,7 @@ GPT-3.5 Fine-tuning Notebook (Notebook link) </examples/finetuning/openai_fine_t
 maxdepth: 1
 ---
 GPT-3.5 Fine-tuning Notebook (Colab) <https://colab.research.google.com/drive/1vWeJBXdFEObuihO7Z8ui2CAYkdHQORqo?usp=sharing>
-GPT-3.5 Fine-tuning Notebook (in Repo) <https://github.com/jerryjliu/llama_index/blob/main/experimental/openai_fine_tuning/openai_fine_tuning.ipynb>
+GPT-3.5 Fine-tuning Notebook (in Repo) <https://github.com/jerryjliu/llama_index_es/blob/main/experimental/openai_fine_tuning/openai_fine_tuning.ipynb>
 ```
 
 ### Fine-tuning with Retrieval Augmentation

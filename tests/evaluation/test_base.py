@@ -1,10 +1,10 @@
 from typing import Any, Optional, Sequence
 
-from llama_index.evaluation import BaseEvaluator
-from llama_index.evaluation.base import EvaluationResult
-from llama_index.prompts.mixin import PromptDictType
-from llama_index.response.schema import NodeWithScore, Response
-from llama_index.schema import TextNode
+from llama_index_es.evaluation import BaseEvaluator
+from llama_index_es.evaluation.base import EvaluationResult
+from llama_index_es.prompts.mixin import PromptDictType
+from llama_index_es.response.schema import NodeWithScore, Response
+from llama_index_es.schema import TextNode
 
 
 class MockEvaluator(BaseEvaluator):

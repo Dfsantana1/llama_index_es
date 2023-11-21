@@ -1,8 +1,8 @@
 """Test pydantic output parser."""
 
 import pytest
-from llama_index.bridge.pydantic import BaseModel
-from llama_index.output_parsers.pydantic import PydanticOutputParser
+from llama_index_es.bridge.pydantic import BaseModel
+from llama_index_es.output_parsers.pydantic import PydanticOutputParser
 
 
 class AttrDict(BaseModel):

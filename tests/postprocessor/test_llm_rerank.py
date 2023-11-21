@@ -3,11 +3,11 @@
 from typing import Any, List
 from unittest.mock import patch
 
-from llama_index.llm_predictor import LLMPredictor
-from llama_index.postprocessor.llm_rerank import LLMRerank
-from llama_index.prompts import BasePromptTemplate
-from llama_index.schema import BaseNode, NodeWithScore, QueryBundle, TextNode
-from llama_index.service_context import ServiceContext
+from llama_index_es.llm_predictor import LLMPredictor
+from llama_index_es.postprocessor.llm_rerank import LLMRerank
+from llama_index_es.prompts import BasePromptTemplate
+from llama_index_es.schema import BaseNode, NodeWithScore, QueryBundle, TextNode
+from llama_index_es.service_context import ServiceContext
 
 
 def mock_llmpredictor_predict(

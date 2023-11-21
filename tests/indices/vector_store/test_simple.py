@@ -1,12 +1,12 @@
 """Test vector store indexes."""
 from typing import Any, List, cast
 
-from llama_index.indices.loading import load_index_from_storage
-from llama_index.indices.vector_store.base import VectorStoreIndex
-from llama_index.schema import Document
-from llama_index.service_context import ServiceContext
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores.simple import SimpleVectorStore
+from llama_index_es.indices.loading import load_index_from_storage
+from llama_index_es.indices.vector_store.base import VectorStoreIndex
+from llama_index_es.schema import Document
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores.simple import SimpleVectorStore
 
 
 def test_build_simple(

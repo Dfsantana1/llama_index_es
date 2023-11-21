@@ -1,7 +1,7 @@
 """Test tools."""
 import pytest
-from llama_index.bridge.pydantic import BaseModel
-from llama_index.tools.function_tool import FunctionTool
+from llama_index_es.bridge.pydantic import BaseModel
+from llama_index_es.tools.function_tool import FunctionTool
 
 try:
     import langchain
@@ -147,13 +147,13 @@ async def test_function_tool_async_defaults_langchain() -> None:
     assert result == "1"
 
 
-from llama_index import (
+from llama_index_es import (
     ServiceContext,
     VectorStoreIndex,
 )
-from llama_index.schema import Document
-from llama_index.token_counter.mock_embed_model import MockEmbedding
-from llama_index.tools import RetrieverTool, ToolMetadata
+from llama_index_es.schema import Document
+from llama_index_es.token_counter.mock_embed_model import MockEmbedding
+from llama_index_es.tools import RetrieverTool, ToolMetadata
 
 
 def test_retreiver_tool() -> None:

@@ -5,7 +5,7 @@
 The most basic example usage of LlamaIndex is through semantic search. We provide a simple in-memory vector store for you to get started, but you can also choose to use any one of our [vector store integrations](/community/integrations/vector_stores.md):
 
 ```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("data").load_data()
 index = VectorStoreIndex.from_documents(documents)
@@ -21,7 +21,7 @@ print(response)
 
 **Guides**
 
-- [Example](/examples/vector_stores/SimpleIndexDemo.ipynb) ([Notebook](https://github.com/run-llama/llama_index/tree/main/docs/examples/vector_stores/SimpleIndexDemo.ipynb))
+- [Example](/examples/vector_stores/SimpleIndexDemo.ipynb) ([Notebook](https://github.com/run-llama/llama_index_es/tree/main/docs/examples/vector_stores/SimpleIndexDemo.ipynb))
 
 ## Summarization
 
@@ -54,8 +54,8 @@ Here are some relevant resources:
 
 **Guides**
 
-- [SQL Guide (Core)](/examples/index_structs/struct_indices/SQLIndexDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/index_structs/struct_indices/SQLIndexDemo.ipynb))
-- [Pandas Demo](/examples/query_engine/pandas_query_engine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_engine/pandas_query_engine.ipynb))
+- [SQL Guide (Core)](/examples/index_structs/struct_indices/SQLIndexDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/index_structs/struct_indices/SQLIndexDemo.ipynb))
+- [Pandas Demo](/examples/query_engine/pandas_query_engine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_engine/pandas_query_engine.ipynb))
 
 ## Synthesis over Heterogeneous Data
 
@@ -64,8 +64,8 @@ Specifically, compose a summary index over your subindices. A summary index inhe
 it can synthesize information across your heterogeneous data sources.
 
 ```python
-from llama_index import VectorStoreIndex, SummaryIndex
-from llama_index.indices.composability import ComposableGraph
+from llama_index_es import VectorStoreIndex, SummaryIndex
+from llama_index_es.indices.composability import ComposableGraph
 
 index1 = VectorStoreIndex.from_documents(notion_docs)
 index2 = VectorStoreIndex.from_documents(slack_docs)
@@ -79,7 +79,7 @@ response = query_engine.query("<query_str>")
 
 **Guides**
 
-- [City Analysis](/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb))
+- [City Analysis](/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb))
 
 ## Routing over Heterogeneous Data
 
@@ -90,8 +90,8 @@ To do this, first build the sub-indices over different data sources.
 Then construct the corresponding query engines, and give each query engine a description to obtain a `QueryEngineTool`.
 
 ```python
-from llama_index import TreeIndex, VectorStoreIndex
-from llama_index.tools import QueryEngineTool
+from llama_index_es import TreeIndex, VectorStoreIndex
+from llama_index_es.tools import QueryEngineTool
 
 ...
 
@@ -114,7 +114,7 @@ Then, we define a `RouterQueryEngine` over them.
 By default, this uses a `LLMSingleSelector` as the router, which uses the LLM to choose the best sub-index to router the query to, given the descriptions.
 
 ```python
-from llama_index.query_engine import RouterQueryEngine
+from llama_index_es.query_engine import RouterQueryEngine
 
 query_engine = RouterQueryEngine.from_defaults(
     query_engine_tools=[tool1, tool2]
@@ -127,15 +127,15 @@ response = query_engine.query(
 
 **Guides**
 
-- [Router Query Engine Guide](/examples/query_engine/RouterQueryEngine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_engine/RouterQueryEngine.ipynb))
-- [City Analysis Unified Query Interface](/examples/composable_indices/city_analysis/City_Analysis-Unified-Query.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb))
+- [Router Query Engine Guide](/examples/query_engine/RouterQueryEngine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_engine/RouterQueryEngine.ipynb))
+- [City Analysis Unified Query Interface](/examples/composable_indices/city_analysis/City_Analysis-Unified-Query.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/city_analysis/PineconeDemo-CityAnalysis.ipynb))
 
 ## Compare/Contrast Queries
 
 You can explicitly perform compare/contrast queries with a **query transformation** module within a ComposableGraph.
 
 ```python
-from llama_index.indices.query.query_transform.base import (
+from llama_index_es.indices.query.query_transform.base import (
     DecomposeQueryTransform,
 )
 
@@ -149,7 +149,7 @@ This module will help break down a complex query into a simpler one over your ex
 **Guides**
 
 - [Query Transformations](/optimizing/advanced_retrieval/query_transformations.md)
-- [City Analysis Compare/Contrast Example](/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb))
+- [City Analysis Compare/Contrast Example](/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/city_analysis/City_Analysis-Decompose.ipynb))
 
 You can also rely on the LLM to _infer_ whether to perform compare/contrast queries (see Multi-Document Queries below).
 
@@ -162,7 +162,7 @@ sub-queries against sub-documents before synthesizing the final answer.
 To do this, first define an index for each document/data source, and wrap it with a `QueryEngineTool` (similar to above):
 
 ```python
-from llama_index.tools import QueryEngineTool, ToolMetadata
+from llama_index_es.tools import QueryEngineTool, ToolMetadata
 
 query_engine_tools = [
     QueryEngineTool(
@@ -192,7 +192,7 @@ query_engine_tools = [
 Then, we define a `SubQuestionQueryEngine` over these tools:
 
 ```python
-from llama_index.query_engine import SubQuestionQueryEngine
+from llama_index_es.query_engine import SubQuestionQueryEngine
 
 query_engine = SubQuestionQueryEngine.from_defaults(
     query_engine_tools=query_engine_tools
@@ -220,7 +220,7 @@ query the index, and then ask followup questions.
 **Guides**
 
 - [Query Transformations](/optimizing/advanced_retrieval/query_transformations.md)
-- [Multi-Step Query Decomposition](/examples/query_transformations/HyDEQueryTransformDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb))
+- [Multi-Step Query Decomposition](/examples/query_transformations/HyDEQueryTransformDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb))
 
 ## Temporal Queries
 

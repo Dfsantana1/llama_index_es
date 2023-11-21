@@ -73,7 +73,7 @@
 - Packaging/Installation changes with PyPi (reduced bloat, new install options)
 - More predictable and consistent import paths
 - Plus, in beta: MultiModal RAG Modules for handling text and images!
-- Find more details at: `https://medium.com/@llama_index/719f03282945`
+- Find more details at: `https://medium.com/@llama_index_es/719f03282945`
 
 ## [0.8.69.post1] - 2023-11-13
 
@@ -1077,7 +1077,7 @@
 
 ### New Features
 
-- Added "LLAMA_INDEX_CACHE_DIR" to control cached files (#7233)
+- Added "llama_index_es_CACHE_DIR" to control cached files (#7233)
 - Default to pydantic selectors when possible (#7154, #7223)
 - Remove the need for langchain wrappers on `embed_model` in the service context (#7157)
 - Metadata extractors take an `LLM` object now, in addition to `LLMPredictor` (#7202)
@@ -1452,7 +1452,7 @@
 - Fix HF LLM output error (#6737)
 - Add system message support for langchain message templates (#6743)
 - Fixed applying node-postprocessors (#6749)
-- Add missing `CustomLLM` import under `llama_index.llms` (#6752)
+- Add missing `CustomLLM` import under `llama_index_es.llms` (#6752)
 - fix(typo): `get_transformer_tokenizer_fn` (#6729)
 - feat(formatting): `black[jupyter]` (#6732)
 - fix(test): `test_optimizer_chinese` (#6730)
@@ -1476,9 +1476,9 @@
 
 ### Breaking/Deprecated API Changes
 
-- Change `BaseOpenAIAgent` to use `llama_index.llms.OpenAI`. Adjust `chat_history` to use `List[ChatMessage]]` as type.
-- Remove (previously deprecated) `llama_index.langchain_helpers.chain_wrapper` module.
-- Remove (previously deprecated) `llama_index.token_counter.token_counter` module. See [migration guide](/how_to/callbacks/token_counting_migration.html) for more details on new callback based token counting.
+- Change `BaseOpenAIAgent` to use `llama_index_es.llms.OpenAI`. Adjust `chat_history` to use `List[ChatMessage]]` as type.
+- Remove (previously deprecated) `llama_index_es.langchain_helpers.chain_wrapper` module.
+- Remove (previously deprecated) `llama_index_es.token_counter.token_counter` module. See [migration guide](/how_to/callbacks/token_counting_migration.html) for more details on new callback based token counting.
 - Remove `ChatGPTLLMPredictor` and `HuggingFaceLLMPredictor`. See [migration guide](/how_to/customization/llms_migration_guide.html) for more details on replacements.
 - Remove support for setting `cache` via `LLMPredictor` constructor.
 - Update `BaseChatEngine` interface:
@@ -1496,7 +1496,7 @@
 - Added async support for "compact" and "refine" response modes (#6590)
 - [feature]add transformer tokenize functionalities for optimizer (chinese) (#6659)
 - Add simple benchmark for vector store (#6670)
-- Introduce `llama_index.llms` module, with new `LLM` interface, and `OpenAI`, `HuggingFaceLLM`, `LangChainLLM` implementations. (#6615)
+- Introduce `llama_index_es.llms` module, with new `LLM` interface, and `OpenAI`, `HuggingFaceLLM`, `LangChainLLM` implementations. (#6615)
 - Evaporate pydantic program (#6666)
 
 ### Bug Fixes / Nits
@@ -1571,7 +1571,7 @@
 
 ### Breaking/Deprecated API Changes
 
-- `Node` has been renamed to `TextNode` and is imported from `llama_index.schema` (#6586)
+- `Node` has been renamed to `TextNode` and is imported from `llama_index_es.schema` (#6586)
 - `TextNode` and `Document` must be instantiated with kwargs: `Document(text=text)` (#6586)
 - `TextNode` (fka `Node`) has a `id_` or `node_id` property, rather than `doc_id` (#6586)
 - `TextNode` and `Document` have a metadata property, which replaces the extra_info property (#6586)

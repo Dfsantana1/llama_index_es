@@ -14,8 +14,8 @@ They can be persisted to (and loaded from) disk by calling `index_store.persist(
 Similarly to document stores, we can also use `MongoDB` as the storage backend of the index store.
 
 ```python
-from llama_index.storage.index_store import MongoIndexStore
-from llama_index import VectorStoreIndex
+from llama_index_es.storage.index_store import MongoIndexStore
+from llama_index_es import VectorStoreIndex
 
 # create (or load) index store
 index_store = MongoIndexStore.from_uri(uri="<mongodb+srv://...>")
@@ -27,7 +27,7 @@ storage_context = StorageContext.from_defaults(index_store=index_store)
 index = VectorStoreIndex(nodes, storage_context=storage_context)
 
 # or alternatively, load index
-from llama_index import load_index_from_storage
+from llama_index_es import load_index_from_storage
 
 index = load_index_from_storage(storage_context)
 ```
@@ -48,12 +48,12 @@ A more complete example can be found [here](../../examples/docstore/MongoDocstor
 We support Redis as an alternative document store backend that persists data as `Node` objects are ingested.
 
 ```python
-from llama_index.storage.index_store import RedisIndexStore
-from llama_index import VectorStoreIndex
+from llama_index_es.storage.index_store import RedisIndexStore
+from llama_index_es import VectorStoreIndex
 
 # create (or load) docstore and add nodes
 index_store = RedisIndexStore.from_host_and_port(
-    host="127.0.0.1", port="6379", namespace="llama_index"
+    host="127.0.0.1", port="6379", namespace="llama_index_es"
 )
 
 # create storage context
@@ -63,7 +63,7 @@ storage_context = StorageContext.from_defaults(index_store=index_store)
 index = VectorStoreIndex(nodes, storage_context=storage_context)
 
 # or alternatively, load index
-from llama_index import load_index_from_storage
+from llama_index_es import load_index_from_storage
 
 index = load_index_from_storage(storage_context)
 ```

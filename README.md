@@ -1,7 +1,7 @@
 # 🗂️ LlamaIndex 🦙
 
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/llama-index)](https://pypi.org/project/llama-index/)
-[![GitHub contributors](https://img.shields.io/github/contributors/jerryjliu/llama_index)](https://github.com/jerryjliu/llama_index/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/jerryjliu/llama_index_es)](https://github.com/jerryjliu/llama_index_es/graphs/contributors)
 [![Discord](https://img.shields.io/discord/1059199217496772688)](https://discord.gg/dGcwcsnxhU)
 
 LlamaIndex (GPT Index) is a data framework for your LLM application.
@@ -15,7 +15,7 @@ LlamaIndex.TS (Typescript/Javascript): https://github.com/run-llama/LlamaIndexTS
 
 Documentation: https://docs.llamaindex.ai/en/stable/.
 
-Twitter: https://twitter.com/llama_index.
+Twitter: https://twitter.com/llama_index_es.
 
 Discord: https://discord.gg/dGcwcsnxhU.
 
@@ -73,7 +73,7 @@ import os
 
 os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY"
 
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("YOUR_DATA_DIRECTORY").load_data()
 index = VectorStoreIndex.from_documents(documents)
@@ -86,7 +86,7 @@ import os
 
 os.environ["REPLICATE_API_TOKEN"] = "YOUR_REPLICATE_API_TOKEN"
 
-from llama_index.llms import Replicate
+from llama_index_es.llms import Replicate
 
 llama2_7b_chat = "meta/llama-2-7b-chat:8e6975e5ed6174911a6ff3d60540dfd4844201974602551e10e9e87ab143d81e"
 llm = Replicate(
@@ -96,22 +96,22 @@ llm = Replicate(
 )
 
 # set tokenizer to match LLM
-from llama_index import set_global_tokenizer
+from llama_index_es import set_global_tokenizer
 from transformers import AutoTokenizer
 
 set_global_tokenizer(
     AutoTokenizer.from_pretrained("NousResearch/Llama-2-7b-chat-hf").encode
 )
 
-from llama_index.embeddings import HuggingFaceEmbedding
-from llama_index import ServiceContext
+from llama_index_es.embeddings import HuggingFaceEmbedding
+from llama_index_es import ServiceContext
 
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 service_context = ServiceContext.from_defaults(
     llm=llm, embed_model=embed_model
 )
 
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
+from llama_index_es import VectorStoreIndex, SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("YOUR_DATA_DIRECTORY").load_data()
 index = VectorStoreIndex.from_documents(
@@ -136,7 +136,7 @@ index.storage_context.persist()
 To reload from disk:
 
 ```python
-from llama_index import StorageContext, load_index_from_storage
+from llama_index_es import StorageContext, load_index_from_storage
 
 # rebuild storage context
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
@@ -166,7 +166,7 @@ author = {Liu, Jerry},
 doi = {10.5281/zenodo.1234},
 month = {11},
 title = {{LlamaIndex}},
-url = {https://github.com/jerryjliu/llama_index},
+url = {https://github.com/jerryjliu/llama_index_es},
 year = {2022}
 }
 ```

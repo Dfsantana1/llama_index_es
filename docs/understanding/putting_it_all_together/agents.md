@@ -15,12 +15,12 @@ Some of these core modules are shown below along with example tutorials (not com
 **Query Transformations**
 
 - [How-To](/optimizing/advanced_retrieval/query_transformations.md)
-- [Multi-Step Query Decomposition](/examples/query_transformations/HyDEQueryTransformDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb))
+- [Multi-Step Query Decomposition](/examples/query_transformations/HyDEQueryTransformDemo.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_transformations/HyDEQueryTransformDemo.ipynb))
 
 **Routing**
 
 - [Usage](/module_guides/querying/router/root.md)
-- [Router Query Engine Guide](/examples/query_engine/RouterQueryEngine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/query_engine/RouterQueryEngine.ipynb))
+- [Router Query Engine Guide](/examples/query_engine/RouterQueryEngine.ipynb) ([Notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/query_engine/RouterQueryEngine.ipynb))
 
 **LLM Reranking**
 

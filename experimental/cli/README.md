@@ -1,13 +1,13 @@
 # Command line interface (experimental)
 
-This module providers a way to interactive with llama_index directly in shell.
+This module providers a way to interactive with llama_index_es directly in shell.
 
 ## Get started
 
 Because "experimental" is not included in the package yet (I think it's why it called "experimental"). For now, you need to git clone this repo and run these command in it.
-Or you can set `export PYTHONPATH=/path/to/your/llama_index` before run following command.
+Or you can set `export PYTHONPATH=/path/to/your/llama_index_es` before run following command.
 
-For long term, when this part of code is stable enough, we can move to src. At that time user will be able to call it directly with something like `python -m llama_index.cli init`.
+For long term, when this part of code is stable enough, we can move to src. At that time user will be able to call it directly with something like `python -m llama_index_es.cli init`.
 
 ### Commands
 

@@ -1,14 +1,14 @@
 from typing import Any, Generator
 
 import pytest
-from llama_index.llms.base import ChatMessage
+from llama_index_es.llms.base import ChatMessage
 from pytest import MonkeyPatch
 
 try:
     import boto3
 except ImportError:
     boto3 = None
-from llama_index.llms import Bedrock
+from llama_index_es.llms import Bedrock
 
 
 class MockStreamingBody:
@@ -78,7 +78,7 @@ def mock_stream_completion_with_retry(*args: Any, **kwargs: Any) -> dict:
 @pytest.mark.skipif(boto3 is None, reason="bedrock not installed")
 def test_model_basic(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "llama_index.llms.bedrock.completion_with_retry", mock_completion_with_retry
+        "llama_index_es.llms.bedrock.completion_with_retry", mock_completion_with_retry
     )
     llm = Bedrock(model="amazon.titan-text-express-v1", profile_name=None)
     test_prompt = "test prompt"
@@ -93,7 +93,7 @@ def test_model_basic(monkeypatch: MonkeyPatch) -> None:
 @pytest.mark.skipif(boto3 is None, reason="bedrock not installed")
 def test_model_streaming(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "llama_index.llms.bedrock.completion_with_retry",
+        "llama_index_es.llms.bedrock.completion_with_retry",
         mock_stream_completion_with_retry,
     )
     llm = Bedrock(model="amazon.titan-text-express-v1", profile_name=None)

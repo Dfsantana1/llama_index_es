@@ -9,7 +9,7 @@ Composability allows you to to define lower-level indices for each document, and
 To see how this works, imagine you have 3 documents: `doc1`, `doc2`, and `doc3`.
 
 ```python
-from llama_index import SimpleDirectoryReader
+from llama_index_es import SimpleDirectoryReader
 
 doc1 = SimpleDirectoryReader("data1").load_data()
 doc2 = SimpleDirectoryReader("data2").load_data()
@@ -23,7 +23,7 @@ Now let's define a tree index for each document. In order to persist the graph l
 In Python, we have:
 
 ```python
-from llama_index import TreeIndex
+from llama_index_es import TreeIndex
 
 storage_context = storage_context.from_defaults()
 
@@ -63,7 +63,7 @@ We can then create a graph with a summary index on top of these 3 tree indices:
 We can query, save, and load the graph to/from disk as any other index.
 
 ```python
-from llama_index.indices.composability import ComposableGraph
+from llama_index_es.indices.composability import ComposableGraph
 
 graph = ComposableGraph.from_indices(
     SummaryIndex,
@@ -125,7 +125,7 @@ graph.root_index.set_index_id("my_id")
 graph.root_index.storage_context.persist(persist_dir="./storage")
 
 # load
-from llama_index import StorageContext, load_graph_from_storage
+from llama_index_es import StorageContext, load_graph_from_storage
 
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
 graph = load_graph_from_storage(storage_context, root_id="my_id")
@@ -133,7 +133,7 @@ graph = load_graph_from_storage(storage_context, root_id="my_id")
 
 We can take a look at a code example below as well. We first build two tree indices, one over the Wikipedia NYC page, and the other over Paul Graham's essay. We then define a keyword extractor index over the two tree indices.
 
-[Here is an example notebook](https://github.com/jerryjliu/llama_index/blob/main/docs/examples/composable_indices/ComposableIndices.ipynb).
+[Here is an example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/docs/examples/composable_indices/ComposableIndices.ipynb).
 
 ```{toctree}
 ---

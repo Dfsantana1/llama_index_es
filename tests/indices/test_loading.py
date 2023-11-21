@@ -2,19 +2,19 @@ from pathlib import Path
 from typing import List
 
 import pytest
-from llama_index.indices.list.base import SummaryIndex
-from llama_index.indices.loading import (
+from llama_index_es.indices.list.base import SummaryIndex
+from llama_index_es.indices.loading import (
     load_index_from_storage,
     load_indices_from_storage,
 )
-from llama_index.indices.vector_store.base import VectorStoreIndex
-from llama_index.query_engine.retriever_query_engine import RetrieverQueryEngine
-from llama_index.schema import BaseNode, Document
-from llama_index.service_context import ServiceContext
-from llama_index.storage.docstore.simple_docstore import SimpleDocumentStore
-from llama_index.storage.index_store.simple_index_store import SimpleIndexStore
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores.faiss import FaissVectorStore
+from llama_index_es.indices.vector_store.base import VectorStoreIndex
+from llama_index_es.query_engine.retriever_query_engine import RetrieverQueryEngine
+from llama_index_es.schema import BaseNode, Document
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.docstore.simple_docstore import SimpleDocumentStore
+from llama_index_es.storage.index_store.simple_index_store import SimpleIndexStore
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores.faiss import FaissVectorStore
 
 try:
     import faiss

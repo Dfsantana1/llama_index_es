@@ -1,6 +1,6 @@
 import os
-from llama_index.llms import Portkey
-from llama_index.llms import ChatMessage  # We'll use this later
+from llama_index_es.llms import Portkey
+from llama_index_es.llms import ChatMessage  # We'll use this later
 from portkey import LLMOptions
 
 os.environ["PORTKEY_API_KEY"] = ""

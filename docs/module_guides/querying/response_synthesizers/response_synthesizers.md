@@ -16,8 +16,8 @@ The following shows the setup for utilizing all kwargs.
 In the `synthesize`/`asyntheszie` functions, you can optionally provide additional source nodes, which will be added to the `response.source_nodes` list.
 
 ```python
-from llama_index.schema import Node, NodeWithScore
-from llama_index import get_response_synthesizer
+from llama_index_es.schema import Node, NodeWithScore
+from llama_index_es import get_response_synthesizer
 
 response_synthesizer = get_response_synthesizer(
     response_mode="refine",

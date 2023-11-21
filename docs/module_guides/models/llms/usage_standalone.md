@@ -5,14 +5,14 @@ You can use our LLM modules on their own.
 ## Text Completion Example
 
 ```python
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 # non-streaming
 resp = OpenAI().complete("Paul Graham is ")
 print(resp)
 
 # using streaming endpoint
-from llama_index.llms import OpenAI
+from llama_index_es.llms import OpenAI
 
 llm = OpenAI()
 resp = llm.stream_complete("Paul Graham is ")
@@ -23,7 +23,7 @@ for delta in resp:
 ## Chat Example
 
 ```python
-from llama_index.llms import ChatMessage, OpenAI
+from llama_index_es.llms import ChatMessage, OpenAI
 
 messages = [
     ChatMessage(

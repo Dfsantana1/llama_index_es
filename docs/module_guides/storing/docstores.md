@@ -16,8 +16,8 @@ A more complete example can be found [here](../../examples/docstore/DocstoreDemo
 We support MongoDB as an alternative document store backend that persists data as `Node` objects are ingested.
 
 ```python
-from llama_index.storage.docstore import MongoDocumentStore
-from llama_index.node_parser import SentenceSplitter
+from llama_index_es.storage.docstore import MongoDocumentStore
+from llama_index_es.node_parser import SentenceSplitter
 
 # create parser and parse document into nodes
 parser = SentenceSplitter()
@@ -50,8 +50,8 @@ A more complete example can be found [here](../../examples/docstore/MongoDocstor
 We support Redis as an alternative document store backend that persists data as `Node` objects are ingested.
 
 ```python
-from llama_index.storage.docstore import RedisDocumentStore
-from llama_index.node_parser import SentenceSplitter
+from llama_index_es.storage.docstore import RedisDocumentStore
+from llama_index_es.node_parser import SentenceSplitter
 
 # create parser and parse document into nodes
 parser = SentenceSplitter()
@@ -59,7 +59,7 @@ nodes = parser.get_nodes_from_documents(documents)
 
 # create (or load) docstore and add nodes
 docstore = RedisDocumentStore.from_host_and_port(
-    host="127.0.0.1", port="6379", namespace="llama_index"
+    host="127.0.0.1", port="6379", namespace="llama_index_es"
 )
 docstore.add_documents(nodes)
 
@@ -83,8 +83,8 @@ A more complete example can be found [here](../../examples/docstore/RedisDocstor
 We support Firestore as an alternative document store backend that persists data as `Node` objects are ingested.
 
 ```python
-from llama_index.storage.docstore import FirestoreDocumentStore
-from llama_index.node_parser import SentenceSplitter
+from llama_index_es.storage.docstore import FirestoreDocumentStore
+from llama_index_es.node_parser import SentenceSplitter
 
 # create parser and parse document into nodes
 parser = SentenceSplitter()

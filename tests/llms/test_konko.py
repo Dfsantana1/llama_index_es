@@ -1,8 +1,8 @@
 from typing import Any, Generator
 
 import pytest
-from llama_index.llms.base import ChatMessage
-from llama_index.llms.konko import Konko
+from llama_index_es.llms.base import ChatMessage
+from llama_index_es.llms.konko import Konko
 from pytest import MonkeyPatch
 
 try:
@@ -96,7 +96,7 @@ def mock_chat_completion_stream(
 @pytest.mark.skipif(konko is None, reason="konko not installed")
 def test_chat_model_basic_non_openai_model(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "llama_index.llms.konko.completion_with_retry", mock_chat_completion
+        "llama_index_es.llms.konko.completion_with_retry", mock_chat_completion
     )
     llm = Konko(model="meta-llama/Llama-2-13b-chat-hf")
     prompt = "test prompt"
@@ -112,7 +112,7 @@ def test_chat_model_basic_non_openai_model(monkeypatch: MonkeyPatch) -> None:
 @pytest.mark.skipif(konko is None, reason="konko not installed")
 def test_chat_model_basic_openai_model(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "llama_index.llms.konko.completion_with_retry", mock_chat_completion
+        "llama_index_es.llms.konko.completion_with_retry", mock_chat_completion
     )
     llm = Konko(model="gpt-3.5-turbo")
     prompt = "test prompt"
@@ -128,7 +128,7 @@ def test_chat_model_basic_openai_model(monkeypatch: MonkeyPatch) -> None:
 @pytest.mark.skipif(konko is None, reason="konko not installed")
 def test_chat_model_streaming(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr(
-        "llama_index.llms.konko.completion_with_retry", mock_chat_completion_stream
+        "llama_index_es.llms.konko.completion_with_retry", mock_chat_completion_stream
     )
     llm = Konko(model="meta-llama/Llama-2-13b-chat-hf")
     message = ChatMessage(role="user", content="test message")

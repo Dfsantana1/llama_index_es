@@ -2,11 +2,11 @@ from typing import Any, Dict, Generator, List
 from unittest.mock import MagicMock, patch
 
 import pytest
-from llama_index.llms.base import (
+from llama_index_es.llms.base import (
     ChatMessage,
     MessageRole,
 )
-from llama_index.llms.rungpt import RunGptLLM
+from llama_index_es.llms.rungpt import RunGptLLM
 
 try:
     import sseclient

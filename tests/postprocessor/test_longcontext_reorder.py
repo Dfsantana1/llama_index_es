@@ -1,7 +1,7 @@
 from typing import List
 
-from llama_index.postprocessor.node import LongContextReorder
-from llama_index.schema import Node, NodeWithScore
+from llama_index_es.postprocessor.node import LongContextReorder
+from llama_index_es.schema import Node, NodeWithScore
 
 
 def test_long_context_reorder() -> None:

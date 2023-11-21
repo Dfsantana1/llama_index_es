@@ -3,7 +3,7 @@
 import re
 from typing import List, Optional, Set
 
-from llama_index.indices.keyword_table.utils import simple_extract_keywords
+from llama_index_es.indices.keyword_table.utils import simple_extract_keywords
 
 
 def mock_tokenizer(text: str) -> List[str]:

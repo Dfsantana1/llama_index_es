@@ -1,10 +1,10 @@
 from typing import List
 
 import pytest
-from llama_index.indices.document_summary.base import DocumentSummaryIndex
-from llama_index.response_synthesizers import get_response_synthesizer
-from llama_index.schema import Document
-from llama_index.service_context import ServiceContext
+from llama_index_es.indices.document_summary.base import DocumentSummaryIndex
+from llama_index_es.response_synthesizers import get_response_synthesizer
+from llama_index_es.schema import Document
+from llama_index_es.service_context import ServiceContext
 
 from tests.mock_utils.mock_prompts import MOCK_REFINE_PROMPT, MOCK_TEXT_QA_PROMPT
 

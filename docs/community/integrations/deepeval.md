@@ -49,12 +49,12 @@ You can more about the [DeepEval Framework](https://docs.confident-ai.com/docs/f
 DeepEval integrates nicely with LlamaIndex's `BaseEvaluator` class. Below is an example of the factual consistency documentation.
 
 ```python
-from llama_index.response.schema import Response
+from llama_index_es.response.schema import Response
 from typing import List
-from llama_index.schema import Document
+from llama_index_es.schema import Document
 from deepeval.metrics.factual_consistency import FactualConsistencyMetric
 
-from llama_index import (
+from llama_index_es import (
     TreeIndex,
     VectorStoreIndex,
     SimpleDirectoryReader,
@@ -62,8 +62,8 @@ from llama_index import (
     ServiceContext,
     Response,
 )
-from llama_index.llms import OpenAI
-from llama_index.evaluation import FaithfulnessEvaluator
+from llama_index_es.llms import OpenAI
+from llama_index_es.evaluation import FaithfulnessEvaluator
 
 import os
 import openai
@@ -78,7 +78,7 @@ service_context_gpt4 = ServiceContext.from_defaults(llm=gpt4)
 #### Getting a lLamaHub Loader
 
 ```python
-from llama_index import download_loader
+from llama_index_es import download_loader
 
 WikipediaReader = download_loader("WikipediaReader")
 
@@ -96,7 +96,7 @@ In this example, we show you how to write a factual consistency check.
 
 ```python
 from typing import Any, Optional, Sequence
-from llama_index.evaluation.base import BaseEvaluator, EvaluationResult
+from llama_index_es.evaluation.base import BaseEvaluator, EvaluationResult
 
 
 class FactualConsistencyEvaluator(BaseEvaluator):

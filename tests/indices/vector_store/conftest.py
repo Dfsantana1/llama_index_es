@@ -4,8 +4,8 @@ import sys
 from unittest.mock import MagicMock
 
 import pytest
-from llama_index.storage.storage_context import StorageContext
-from llama_index.vector_stores.faiss import FaissVectorStore
+from llama_index_es.storage.storage_context import StorageContext
+from llama_index_es.vector_stores.faiss import FaissVectorStore
 
 from tests.indices.vector_store.mock_faiss import MockFaissIndex
 

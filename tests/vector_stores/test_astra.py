@@ -1,9 +1,9 @@
 import unittest
 
 import pytest
-from llama_index.schema import NodeRelationship, RelatedNodeInfo, TextNode
-from llama_index.vector_stores.astra import AstraDBVectorStore
-from llama_index.vector_stores.types import VectorStoreQuery
+from llama_index_es.schema import NodeRelationship, RelatedNodeInfo, TextNode
+from llama_index_es.vector_stores.astra import AstraDBVectorStore
+from llama_index_es.vector_stores.types import VectorStoreQuery
 
 try:
     import astrapy

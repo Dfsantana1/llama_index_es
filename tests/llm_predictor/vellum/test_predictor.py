@@ -2,8 +2,8 @@ from typing import Callable, Iterator
 from unittest import mock
 
 import pytest
-from llama_index.llm_predictor.vellum import VellumPredictor
-from llama_index.prompts import BasePromptTemplate
+from llama_index_es.llm_predictor.vellum import VellumPredictor
+from llama_index_es.prompts import BasePromptTemplate
 
 
 def test_predict__basic(

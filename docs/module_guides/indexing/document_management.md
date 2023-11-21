@@ -9,13 +9,13 @@ You can "insert" a new Document into any index data structure, after building th
 The underlying mechanism behind insertion depends on the index structure. For instance, for the summary index, a new Document is inserted as additional node(s) in the list.
 For the vector store index, a new Document (and embeddings) is inserted into the underlying document/embedding store.
 
-An example notebook showcasing our insert capabilities is given [here](https://github.com/jerryjliu/llama_index/blob/main/examples/paul_graham_essay/InsertDemo.ipynb).
+An example notebook showcasing our insert capabilities is given [here](https://github.com/jerryjliu/llama_index_es/blob/main/examples/paul_graham_essay/InsertDemo.ipynb).
 In this notebook we showcase how to construct an empty index, manually create Document objects, and add those to our index data structures.
 
 An example code snippet is given below:
 
 ```python
-from llama_index import SummaryIndex, Document
+from llama_index_es import SummaryIndex, Document
 
 index = SummaryIndex([])
 text_chunks = ["text_chunk_1", "text_chunk_2", "text_chunk_3"]

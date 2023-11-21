@@ -1,4 +1,4 @@
 PaLM
 ====
 
-.. autopydantic_model:: llama_index.llms.palm.PaLM
+.. autopydantic_model:: llama_index_es.llms.palm.PaLM

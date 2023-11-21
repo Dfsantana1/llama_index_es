@@ -3,6 +3,6 @@
 Vector Store
 =====================
 
-.. automodule:: llama_index.vector_stores
+.. automodule:: llama_index_es.vector_stores
    :members:
    :inherited-members:

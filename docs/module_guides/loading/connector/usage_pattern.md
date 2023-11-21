@@ -8,7 +8,7 @@ downloads the loader file into a module that you can use within your application
 Example usage:
 
 ```python
-from llama_index import VectorStoreIndex, download_loader
+from llama_index_es import VectorStoreIndex, download_loader
 
 GoogleDocsReader = download_loader("GoogleDocsReader")
 

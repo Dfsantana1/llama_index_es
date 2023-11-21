@@ -2,7 +2,7 @@
 
 from tempfile import TemporaryDirectory
 
-from llama_index.readers.json import JSONReader
+from llama_index_es.readers.json import JSONReader
 
 
 def test_basic() -> None:

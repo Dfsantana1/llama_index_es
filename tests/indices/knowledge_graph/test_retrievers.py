@@ -1,12 +1,12 @@
 from typing import Any, List
 from unittest.mock import patch
 
-from llama_index.graph_stores import SimpleGraphStore
-from llama_index.indices.knowledge_graph.base import KnowledgeGraphIndex
-from llama_index.indices.knowledge_graph.retrievers import KGTableRetriever
-from llama_index.schema import Document, QueryBundle
-from llama_index.service_context import ServiceContext
-from llama_index.storage.storage_context import StorageContext
+from llama_index_es.graph_stores import SimpleGraphStore
+from llama_index_es.indices.knowledge_graph.base import KnowledgeGraphIndex
+from llama_index_es.indices.knowledge_graph.retrievers import KGTableRetriever
+from llama_index_es.schema import Document, QueryBundle
+from llama_index_es.service_context import ServiceContext
+from llama_index_es.storage.storage_context import StorageContext
 
 from tests.indices.knowledge_graph.test_base import MockEmbedding, mock_extract_triplets
 from tests.mock_utils.mock_prompts import MOCK_QUERY_KEYWORD_EXTRACT_PROMPT

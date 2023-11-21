@@ -1,5 +1,5 @@
-from llama_index.node_parser.file.json import JSONNodeParser
-from llama_index.schema import Document
+from llama_index_es.node_parser.file.json import JSONNodeParser
+from llama_index_es.schema import Document
 
 
 def test_split_empty_text() -> None:

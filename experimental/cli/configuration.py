@@ -2,20 +2,20 @@ import os
 from configparser import ConfigParser, SectionProxy
 from typing import Any, Type
 
-from llama_index import (
+from llama_index_es import (
     LLMPredictor,
     ServiceContext,
     VectorStoreIndex,
 )
-from llama_index.embeddings.base import BaseEmbedding
-from llama_index.embeddings.openai import OpenAIEmbedding
-from llama_index.indices import SimpleKeywordTableIndex
-from llama_index.indices.base import BaseIndex
-from llama_index.indices.loading import load_index_from_storage
-from llama_index.llm_predictor import StructuredLLMPredictor
-from llama_index.llms.base import LLM
-from llama_index.llms.openai import OpenAI
-from llama_index.storage.storage_context import StorageContext
+from llama_index_es.embeddings.base import BaseEmbedding
+from llama_index_es.embeddings.openai import OpenAIEmbedding
+from llama_index_es.indices import SimpleKeywordTableIndex
+from llama_index_es.indices.base import BaseIndex
+from llama_index_es.indices.loading import load_index_from_storage
+from llama_index_es.llm_predictor import StructuredLLMPredictor
+from llama_index_es.llms.base import LLM
+from llama_index_es.llms.openai import OpenAI
+from llama_index_es.storage.storage_context import StorageContext
 
 CONFIG_FILE_NAME = "config.ini"
 DEFAULT_PERSIST_DIR = "./storage"

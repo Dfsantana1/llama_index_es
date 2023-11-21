@@ -1,11 +1,11 @@
 import pytest
-from llama_index.bridge.pydantic import BaseModel
+from llama_index_es.bridge.pydantic import BaseModel
 
 try:
     from guidance.llms import Mock as MockLLM
 except ImportError:
     MockLLM = None  # type: ignore
-from llama_index.program.guidance_program import GuidancePydanticProgram
+from llama_index_es.program.guidance_program import GuidancePydanticProgram
 
 
 @pytest.mark.skipif(MockLLM is None, reason="guidance not installed")

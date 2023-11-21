@@ -1,6 +1,6 @@
 import pytest
-from llama_index.output_parsers.base import StructuredOutput
-from llama_index.output_parsers.selection import SelectionOutputParser
+from llama_index_es.output_parsers.base import StructuredOutput
+from llama_index_es.output_parsers.selection import SelectionOutputParser
 
 
 @pytest.fixture()
@@ -36,7 +36,7 @@ def test_format(output_parser: SelectionOutputParser) -> None:
         pytest.param(
             '\nOutput:\n[\n  {\n    "choice": 1,\n    "reason": "just because"\n  }\n]',
             1,
-            id="https://github.com/jerryjliu/llama_index/issues/3135",
+            id="https://github.com/jerryjliu/llama_index_es/issues/3135",
         ),
         pytest.param(
             """ Based on the given choices, the <shortened> question "<redacted>?" is:

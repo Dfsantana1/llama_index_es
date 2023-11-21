@@ -23,7 +23,7 @@ Here is a sample code snippet of showing how to load a document from LlamaHub
 into the JSON format that `/upsert` expects:
 
 ```python
-from llama_index import download_loader, Document
+from llama_index_es import download_loader, Document
 from typing import Dict, List
 import json
 
@@ -55,7 +55,7 @@ def dump_docs_to_json(documents: List[Document], out_path: str) -> Dict:
     json.dump(result_json, open(out_path, "w"))
 ```
 
-For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index/blob/main/examples/chatgpt_plugin/ChatGPT_Retrieval_Plugin_Upload.ipynb).
+For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/examples/chatgpt_plugin/ChatGPT_Retrieval_Plugin_Upload.ipynb).
 
 ### ChatGPT Retrieval Plugin Data Loader
 
@@ -66,7 +66,7 @@ It allows you to easily load data from any docstore that implements the plugin A
 Example code:
 
 ```python
-from llama_index.readers import ChatGPTRetrievalPluginReader
+from llama_index_es.readers import ChatGPTRetrievalPluginReader
 import os
 
 # load documents
@@ -77,7 +77,7 @@ reader = ChatGPTRetrievalPluginReader(
 documents = reader.load_data("What did the author do growing up?")
 
 # build and query index
-from llama_index import SummaryIndex
+from llama_index_es import SummaryIndex
 
 index = SummaryIndex.from_documents(documents)
 # set Logging to DEBUG for more detailed outputs
@@ -87,7 +87,7 @@ response = query_engine.query(
 )
 ```
 
-For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index/blob/main/examples/chatgpt_plugin/ChatGPTRetrievalPluginReaderDemo.ipynb).
+For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/examples/chatgpt_plugin/ChatGPTRetrievalPluginReaderDemo.ipynb).
 
 ### ChatGPT Retrieval Plugin Index
 
@@ -99,8 +99,8 @@ Note: this index is a vector index, allowing top-k retrieval.
 Example code:
 
 ```python
-from llama_index.indices.vector_store import ChatGPTRetrievalPluginIndex
-from llama_index import SimpleDirectoryReader
+from llama_index_es.indices.vector_store import ChatGPTRetrievalPluginIndex
+from llama_index_es import SimpleDirectoryReader
 import os
 
 # load documents
@@ -123,4 +123,4 @@ query_engine = vector_index.as_query_engine(
 response = query_engine.query("What did the author do growing up?")
 ```
 
-For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index/blob/main/examples/chatgpt_plugin/ChatGPTRetrievalPluginIndexDemo.ipynb).
+For more details, check out the [full example notebook](https://github.com/jerryjliu/llama_index_es/blob/main/examples/chatgpt_plugin/ChatGPTRetrievalPluginIndexDemo.ipynb).
